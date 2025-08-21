@@ -189,22 +189,6 @@ export default function Home() {
           Feel free to explore their GitHub cards below to see their projects.
         </p>
         
-        {/* GitHub API info with tooltip */}
-        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6">
-          <GitHubIcon className="h-4 w-4" />
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger className="flex items-center gap-1">
-                Profile information is loaded from GitHub API
-                <InfoIcon className="h-4 w-4" />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p className="max-w-xs pb-1.5 text-center">All profile images, bio information, and repository data are fetched directly from GitHub&apos;s API in real-time.</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </div>
-        
         <blockquote className="italic text-sm text-shadow-2xs text-gray-500 max-w-3xl mx-auto mb-6">
           &ldquo;Live as if you were to die tomorrow. Learn as if you were to live forever.&rdquo; ― Mahatma Gandhi
         </blockquote>
@@ -245,6 +229,27 @@ export default function Home() {
         </div>
       </motion.section> 
 
+      {/* GitHub API info with tooltip - Animated */}
+      <motion.div 
+        className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-2"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <GitHubIcon className="h-4 w-4" />
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger className="flex items-center gap-1">
+              Profile information is loaded from GitHub API
+              <InfoIcon className="h-4 w-4" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p className="max-w-xs pb-1.5 text-center">All profile images, bio information, and repository data are fetched directly from GitHub&apos;s API in real-time.</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </motion.div>
+      
       {/* GitHub Profiles Grid */}
       <motion.main 
         className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"

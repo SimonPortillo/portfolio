@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Portfolio website",
@@ -22,8 +23,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
+      <div className="flex flex-col min-h-screen">
         <Navbar />
-        {children}
+          {children}
+        <Footer />
+      </div>
         </ThemeProvider>
       </body>
     </html>
