@@ -4,7 +4,7 @@ import { motion} from "motion/react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import Image from "next/image" // Import Next.js Image component
+import Image from "next/image"
 
 export default function ProjectsPage() {
     
