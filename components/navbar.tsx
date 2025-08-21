@@ -17,7 +17,7 @@ import { Separator } from "@/components/ui/separator";
 
 export function Navbar() {
   return (
-    <div className="sticky top-0 w-full bg-background/95 backdrop-blur-sm z-50">
+    <div className="sticky top-0 w-full bg-background/60 backdrop-blur-sm z-50">
       <div className="flex items-center justify-between w-full">
         {/* Left section - empty for balance */}
         <div className="flex-1 flex justify-start">
