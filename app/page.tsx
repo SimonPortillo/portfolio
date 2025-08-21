@@ -189,6 +189,7 @@ export default function Home() {
           Feel free to explore their GitHub profiles to see their projects.
         </p>
         
+        {/* GitHub API info with tooltip */}
         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6">
           <GitHubIcon className="h-4 w-4" />
           <TooltipProvider>
@@ -198,14 +199,14 @@ export default function Home() {
                 <InfoIcon className="h-4 w-4" />
               </TooltipTrigger>
               <TooltipContent>
-                <p className="max-w-xs m-1">All profile images, bio information, and repository data are fetched directly from GitHub's API in real-time.</p>
+                <p className="max-w-xs m-1">All profile images, bio information, and repository data are fetched directly from GitHub&apos;s API in real-time.</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </div>
         
         <blockquote className="italic text-sm text-shadow-2xs text-gray-500 max-w-3xl mx-auto mb-6">
-          "Live as if you were to die tomorrow. Learn as if you were to live forever." ― Mahatma Gandhi
+          &ldquo;Live as if you were to die tomorrow. Learn as if you were to live forever.&rdquo; ― Mahatma Gandhi
         </blockquote>
         
         <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto my-8">

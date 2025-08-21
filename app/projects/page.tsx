@@ -1,14 +1,14 @@
 "use client" //client component
 
-import { motion, AnimatePresence } from "motion/react"
+import { motion} from "motion/react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Image from "next/image" // Import Next.js Image component
 
 export default function ProjectsPage() {
-  // Sample projects data
-  const projects = [
     
+  const projects = [
     {
       id: 1,
       title: "Kartverket Reporting System",
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
       >
         <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Our Projects</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-          Explore the various projects we've developed throughout our academic journey.
+          Explore the various projects we&apos;ve developed throughout our academic journey.
           Each project demonstrates different skills and technologies.
         </p>
       </motion.section>
@@ -81,11 +81,14 @@ export default function ProjectsPage() {
             <Card className="h-full flex flex-col">
               <CardHeader>
                 {project.imageUrl ? (
-                  <div className="w-full h-48 rounded-md mb-4 overflow-hidden">
-                    <img 
+                  <div className="w-full h-48 rounded-md mb-4 overflow-hidden relative">
+                    <Image 
                       src={project.imageUrl} 
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                      priority={index < 2}
                     />
                   </div>
                 ) : (

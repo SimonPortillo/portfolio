@@ -17,7 +17,7 @@ import { Separator } from "@/components/ui/separator";
 
 export function Navbar() {
   return (
-    <div className="sticky top-0 w-full bg-background/95 backdrop-blur-sm z-50">
+    <>
       <div className="flex items-center justify-between w-full">
         {/* Left section - empty for balance */}
         <div className="flex-1 flex justify-start">
@@ -47,7 +47,7 @@ export function Navbar() {
                             Group Projects Overview
                           </div>
                           <p className="text-muted-foreground text-sm leading-tight">
-                            Explore the various projects we've developed throughout our academic journey.
+                            Explore the various projects we&apos;ve developed throughout our academic journey.
                             Each project demonstrates different skills and technologies.
                           </p>
                         </Link>
@@ -80,7 +80,7 @@ export function Navbar() {
         </div>
       </div>
       <Separator className="" />
-    </div>
+    </>
   )
 }
 
