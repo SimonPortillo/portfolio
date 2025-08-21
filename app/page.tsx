@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { useState, useEffect, useMemo } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
 import { Badge } from "@/components/ui/badge"
 import {
   DropdownMenu,
@@ -20,6 +20,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from "lucide-react"
+import { GitHubIcon } from "@/components/icons/github-icon"
+import { InfoIcon } from "lucide-react"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 interface GitHubRepo {
   id: number;
@@ -47,16 +55,16 @@ export default function Home() {
   
   // Define role mapping for each GitHub username
   const userRoles: Record<string, string> = useMemo(() => ({
-    'SimonPortillo': 'Full Stack Developer',
-    'mgoberg': 'Backend Developer',
-    'Azders': 'UX Designer',
-    'UngeBakern': 'DevOps Engineer',
-    'jmanneraak': 'Front End Developer'
+    'SimonPortillo': 'Full Stack',
+    'mgoberg': 'Backend',
+    'Azders': 'UX',
+    'UngeBakern': 'DevOps',
+    'jmanneraak': 'Front End'
   }), []);
   
   // Define secondary roles 
   const secondaryRoles: Record<string, string> = useMemo(() => ({
-    'SimonPortillo': 'React Specialist',
+    'SimonPortillo': 'Next.js',
     'mgoberg': 'API Designer',
     'Azders': 'Interaction Designer',
     'UngeBakern': 'Cloud Architect',
@@ -152,6 +160,20 @@ export default function Home() {
     }
   };
 
+  // Define technology badges with colors
+  const techBadges = [
+    { name: "React", bgColor: "bg-blue-100", textColor: "text-blue-800", hoverColor: "hover:bg-blue-200" },
+    { name: "Next.js", bgColor: "bg-gray-800", textColor: "text-white", hoverColor: "hover:bg-gray-700" },
+    { name: "C#", bgColor: "bg-purple-100", textColor: "text-purple-800", hoverColor: "hover:bg-purple-200" },
+    { name: "Python", bgColor: "bg-yellow-100", textColor: "text-yellow-800", hoverColor: "hover:bg-yellow-200" },
+    { name: "TypeScript", bgColor: "bg-blue-200", textColor: "text-blue-900", hoverColor: "hover:bg-blue-300" },
+    { name: "PostgreSQL", bgColor: "bg-green-100", textColor: "text-green-800", hoverColor: "hover:bg-green-200" },
+    { name: "TailwindCSS", bgColor: "bg-cyan-100", textColor: "text-cyan-800", hoverColor: "hover:bg-cyan-200" },
+    { name: "Docker", bgColor: "bg-blue-300", textColor: "text-blue-900", hoverColor: "hover:bg-blue-400" },
+    { name: "Git", bgColor: "bg-orange-100", textColor: "text-orange-800", hoverColor: "hover:bg-orange-200" },
+    { name: "SQL", bgColor: "bg-red-100", textColor: "text-red-800", hoverColor: "hover:bg-red-200" },
+  ];
+
   return (
     <div className="flex flex-col space-y-12">
       {/* Hero Section */}
@@ -161,17 +183,66 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Our Development Team</h1>
+        <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Meet Our Study Group</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-          Meet the talented developers behind our projects. Each team member brings unique skills and expertise.
+          The students behind our projects. Each team member brings unique skills and expertise.
+          Feel free to explore their GitHub profiles to see their projects.
         </p>
-        <div className="flex gap-2 justify-center">
-          <Badge variant="secondary" className="text-md px-4 py-1">React</Badge>
-          <Badge variant="secondary" className="text-md px-4 py-1">Next.js</Badge>
-          <Badge variant="secondary" className="text-md px-4 py-1">C#</Badge>
-          <Badge variant="secondary" className="text-md px-4 py-1">Python</Badge>
+        
+        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6">
+          <GitHubIcon className="h-4 w-4" />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger className="flex items-center gap-1">
+                Profile information is loaded from GitHub API
+                <InfoIcon className="h-4 w-4" />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className="max-w-xs m-1">All profile images, bio information, and repository data are fetched directly from GitHub's API in real-time.</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
-      </motion.section>
+        
+        <blockquote className="italic text-sm text-shadow-2xs text-gray-500 max-w-3xl mx-auto mb-6">
+          "Live as if you were to die tomorrow. Learn as if you were to live forever." ― Mahatma Gandhi
+        </blockquote>
+        
+        <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto my-8">
+          {techBadges.map((badge, index) => (
+            <motion.div
+              key={badge.name}
+              initial={{ rotate: 0 }}
+              whileHover={{ 
+                rotate: [-2, -4, -2, 0, 2, 4, 2, 0],
+                scale: 1.1,
+                transition: { 
+                  duration: 0.6, 
+                  ease: "easeInOut" 
+                } 
+              }}
+              whileTap={{ scale: 0.95 }}
+              animate={{ 
+                y: [0, -2, -4, -5, -4, -2, 0, 2, 4, 5, 4, 2, 0],
+                transition: { 
+                  repeat: Infinity, 
+                  repeatType: "loop",
+                  duration: 3,
+                  ease: "easeInOut",
+                  delay: index * 0.15 % 1.5, 
+                }
+              }}
+            >
+              <Badge 
+                variant="secondary" 
+                className={`text-md px-4 py-1.5 ${badge.bgColor} ${badge.textColor} ${badge.hoverColor} cursor-pointer`}
+              >
+                {badge.name}
+              </Badge>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section> 
 
       {/* GitHub Profiles Grid */}
       <motion.main 
@@ -301,7 +372,7 @@ export default function Home() {
                           className="flex-1"
                         >
                           <Button variant="outline" size="sm" className="w-full">
-                            View GitHub Profile
+                            View Full Profile
                           </Button> 
                         </a>
                         
@@ -343,7 +414,7 @@ export default function Home() {
                 )}
                 <div className="flex items-center gap-2 mt-1">
                   {repo.language && (
-                    <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
+                    <span className="text-xs bg-muted dark:bg-muted px-2 py-0.5 rounded-full">
                       {repo.language}
                     </span>
                   )}

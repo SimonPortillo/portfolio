@@ -9,7 +9,7 @@ import {
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
+  NavigationMenuList, 
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
@@ -17,7 +17,7 @@ import { Separator } from "@/components/ui/separator";
 
 export function Navbar() {
   return (
-    <>
+    <div className="sticky top-0 w-full bg-background/95 backdrop-blur-sm z-50">
       <div className="flex items-center justify-between w-full">
         {/* Left section - empty for balance */}
         <div className="flex-1 flex justify-start">
@@ -29,48 +29,38 @@ export function Navbar() {
           <NavigationMenu viewport={false}>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                  <Link href="/">Home</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link
                           className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
-                          href="/"
+                          href="/projects"
                         >
                           <div className="mt-4 mb-2 text-lg font-medium">
-                            Portfolio Website
+                            Group Projects Overview
                           </div>
                           <p className="text-muted-foreground text-sm leading-tight">
-                            Built with Next.js and shadcn/ui, this portfolio showcases my work and projects.
+                            Explore the various projects we've developed throughout our academic journey.
+                            Each project demonstrates different skills and technologies.
                           </p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
-                    <ListItem href="/docs" title="placeholder">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero debitis, cumque id minus tempora architecto cum similique aperiam quas beatae iusto assumenda excepturi eum totam doloremque ullam temporibus veniam quo?
+                    <ListItem href="/projects/project_1" title="Kartverket Reporting System">
+                      A full stack C# .NET application for reporting errors in geospatial data.
                     </ListItem>
-                    <ListItem href="/docs/installation" title="placeholder">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quis voluptatem inventore. Enim hic provident nihil illo, est minus alias nesciunt in molestiae earum non nemo repudiandae rerum recusandae nostrum?
+                    <ListItem href="/projects/project_2" title="NukeTown">
+                      An emergency shelter finder app built with React helping users find nearby shelters during crises.
                     </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    <ListItem href="">
-                      dynamically fetch github repos from github api
-                    </ListItem>
-                    <ListItem href="">
-                      test
-                    </ListItem>
-                    <ListItem href="">
-                      test
-                    </ListItem>
-                    <ListItem href="">
-                      test
+                    <ListItem href="/projects/project_3" title="In progress">
+                      Coming soon! 
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -90,7 +80,7 @@ export function Navbar() {
         </div>
       </div>
       <Separator className="" />
-    </>
+    </div>
   )
 }
 
