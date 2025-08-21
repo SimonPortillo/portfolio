@@ -186,7 +186,7 @@ export default function Home() {
         <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Meet Our Study Group</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
           The students behind our projects. Each team member brings unique skills and expertise.
-          Feel free to explore their GitHub profiles to see their projects.
+          Feel free to explore their GitHub cards below to see their projects.
         </p>
         
         {/* GitHub API info with tooltip */}
@@ -199,7 +199,7 @@ export default function Home() {
                 <InfoIcon className="h-4 w-4" />
               </TooltipTrigger>
               <TooltipContent>
-                <p className="max-w-xs m-1">All profile images, bio information, and repository data are fetched directly from GitHub&apos;s API in real-time.</p>
+                <p className="max-w-xs pb-1.5 text-center">All profile images, bio information, and repository data are fetched directly from GitHub&apos;s API in real-time.</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -349,7 +349,7 @@ export default function Home() {
                     <p className="text-sm text-gray-500">@{profiles[index]?.login}</p>
                     
                     {/* Add role badges */}
-                    <div className="flex flex-wrap gap-2 my-2">
+                    <div className="mono flex flex-wrap gap-2 my-2">
                       {userRoles[username] && (
                         <Badge variant="default">{userRoles[username]}</Badge>
                       )}
@@ -358,11 +358,11 @@ export default function Home() {
                       )}
                     </div>
                     
-                    <p className="mono mt-2 h-[72px] overflow-hidden">{profiles[index]?.bio || "No bio available"}</p>
+                    <p className="mt-2 h-[60px] overflow-hidden">{profiles[index]?.bio || "No bio available"}</p>
                     <div className="flex flex-col mt-auto pt-4 space-y-3">
                       <div className="flex gap-4">
-                        <p className="text-sm text-gray-500">{profiles[index]?.public_repos} repositories</p>
-                        <p className="text-sm text-gray-500">{profiles[index]?.followers} followers</p>
+                        <p className="mono text-sm text-gray-500">{profiles[index]?.public_repos} repositories</p>
+                        <p className="mono text-sm text-gray-500">{profiles[index]?.followers} followers</p>
                       </div>
                       
                       <div className="flex gap-2 w-full">
@@ -393,7 +393,7 @@ export default function Home() {
       {reposLoading[index] ? "Loading..." : "Repositories"} <ChevronDown className="ml-2 h-4 w-4" />
     </Button>
   </DropdownMenuTrigger>
-  <DropdownMenuContent align="end" className="w-72">
+  <DropdownMenuContent align="end" className="mono w-72">
     <DropdownMenuLabel>Repositories</DropdownMenuLabel>
     <DropdownMenuSeparator />
     {profiles[index]?.repos ? (
