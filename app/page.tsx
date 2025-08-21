@@ -11,6 +11,24 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { useState, useEffect, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { ChevronDown } from "lucide-react"
+
+interface GitHubRepo {
+  id: number;
+  name: string;
+  html_url: string;
+  description: string | null;
+  stargazers_count: number;
+  language: string | null;
+}
 
 interface GitHubProfile {
   login: string;
@@ -20,6 +38,7 @@ interface GitHubProfile {
   html_url: string;
   public_repos: number;
   followers: number;
+  repos?: GitHubRepo[];
 }
 
 export default function Home() {
@@ -47,6 +66,7 @@ export default function Home() {
   const [profiles, setProfiles] = useState<(GitHubProfile | null)[]>(Array(githubUsernames.length).fill(null));
   const [loading, setLoading] = useState<boolean[]>(Array(githubUsernames.length).fill(true));
   const [errors, setErrors] = useState<(string | null)[]>(Array(githubUsernames.length).fill(null));
+  const [reposLoading, setReposLoading] = useState<boolean[]>(Array(githubUsernames.length).fill(false));
 
   useEffect(() => {
     const fetchGitHubProfiles = async () => {
@@ -93,6 +113,44 @@ export default function Home() {
 
     fetchGitHubProfiles();
   }, [githubUsernames]);
+
+  const fetchUserRepos = async (username: string, index: number) => {
+    // Set loading state for this user's repos
+    setReposLoading(prev => {
+      const updated = [...prev];
+      updated[index] = true;
+      return updated;
+    });
+
+    try {
+      const response = await fetch(`/api/github/${username}/repos`);
+      
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+      
+      const repos = await response.json();
+      
+      setProfiles(prev => {
+        const updated = [...prev];
+        if (updated[index]) {
+          updated[index] = {
+            ...updated[index]!,
+            repos: repos
+          };
+        }
+        return updated;
+      });
+    } catch (err) {
+      console.error(`Failed to fetch repositories for ${username}:`, err);
+    } finally {
+      setReposLoading(prev => {
+        const updated = [...prev];
+        updated[index] = false;
+        return updated;
+      });
+    }
+  };
 
   return (
     <div className="flex flex-col space-y-12">
@@ -234,16 +292,103 @@ export default function Home() {
                         <p className="text-sm text-gray-500">{profiles[index]?.public_repos} repositories</p>
                         <p className="text-sm text-gray-500">{profiles[index]?.followers} followers</p>
                       </div>
-                      <a 
-                        href={profiles[index]?.html_url}
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="w-full"
-                      >
-                        <Button variant="outline" size="sm" >
-                          View GitHub Profile
-                        </Button> 
-                      </a>
+                      
+                      <div className="flex gap-2 w-full">
+                        <a 
+                          href={profiles[index]?.html_url}
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="flex-1"
+                        >
+                          <Button variant="outline" size="sm" className="w-full">
+                            View GitHub Profile
+                          </Button> 
+                        </a>
+                        
+                        <DropdownMenu onOpenChange={(open) => {
+  // Fetch repos when dropdown is opened and we don't have them already
+  if (open && !profiles[index]?.repos && !reposLoading[index]) {
+    fetchUserRepos(username, index);
+  }
+}}>
+  <DropdownMenuTrigger asChild>
+    <Button 
+      variant="secondary" 
+      size="sm" 
+      className="whitespace-nowrap"
+      disabled={reposLoading[index]}
+    >
+      {reposLoading[index] ? "Loading..." : "Repositories"} <ChevronDown className="ml-2 h-4 w-4" />
+    </Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent align="end" className="w-72">
+    <DropdownMenuLabel>Repositories</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    {profiles[index]?.repos ? (
+      profiles[index]?.repos.length > 0 ? (
+        profiles[index]!.repos.slice(0, 8).map((repo) => (
+          <DropdownMenuItem key={repo.id} asChild>
+            <a 
+              href={repo.html_url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
+              <div className="flex flex-col">
+                <span className="font-medium">{repo.name}</span>
+                {repo.description && (
+                  <span className="text-xs text-gray-500 truncate max-w-[260px]">
+                    {repo.description}
+                  </span>
+                )}
+                <div className="flex items-center gap-2 mt-1">
+                  {repo.language && (
+                    <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">
+                      {repo.language}
+                    </span>
+                  )}
+                  {repo.stargazers_count > 0 && (
+                    <span className="text-xs flex items-center">
+                      ★ {repo.stargazers_count}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </a>
+          </DropdownMenuItem>
+        ))
+      ) : (
+        <DropdownMenuItem disabled>No public repositories</DropdownMenuItem>
+      )
+    ) : reposLoading[index] ? (
+      <DropdownMenuItem disabled>
+        <div className="flex items-center justify-center w-full py-2">
+          <Skeleton className="h-4 w-4 rounded-full mr-2" />
+          <span>Loading repositories...</span>
+        </div>
+      </DropdownMenuItem>
+    ) : (
+      <DropdownMenuItem disabled>Click to load repositories</DropdownMenuItem>
+    )}
+    
+    {profiles[index]?.repos && profiles[index]!.repos.length > 8 && (
+      <>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem asChild>
+          <a 
+            href={`${profiles[index]?.html_url}?tab=repositories`}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="cursor-pointer text-center font-medium"
+          >
+            View all repositories
+          </a>
+        </DropdownMenuItem>
+      </>
+    )}
+  </DropdownMenuContent>
+</DropdownMenu>
+                      </div>
                     </div>
                   </motion.div>
                 )}
