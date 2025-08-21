@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Using new signature with context object for better compatibility
+// Use the destructured params pattern - this is what Next.js 15.5.0 expects
 export async function GET(
   request: NextRequest,
-  context: { params: { username: string } }
+  { params }: { params: { username: string } }
 ) {
   try {
-    // Await the params - in Next.js App Router, params may be a promise
-    const { username } = await Promise.resolve(context.params);
+    const { username } = params;
     
     // Use GitHub token in .env for authentication
     const token = process.env.GITHUB_TOKEN;
