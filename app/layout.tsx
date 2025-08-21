@@ -9,23 +9,23 @@ export const metadata: Metadata = {
   description: "Showcasing my work and projects",
 };
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans'
-})
+// const plusJakartaSans = Plus_Jakarta_Sans({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--font-sans'
+// })
 
-const lora = Lora({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-serif'
-})
+// const lora = Lora({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--font-serif'
+// })
 
-const robotoMono = Roboto_Mono({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-mono'
-})
+// const robotoMono = Roboto_Mono({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--font-mono'
+// })
 
 export default function RootLayout({
   children,
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${lora.variable} ${robotoMono.variable}`} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider
             attribute="class"
