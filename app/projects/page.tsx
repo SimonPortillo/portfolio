@@ -1,48 +1,13 @@
-"use client" //client component
+"use client"
 
-import { motion} from "motion/react"
+import { motion } from "motion/react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { projectsSummary } from "@/lib/data/projects-summary"
 
 export default function ProjectsPage() {
-    
-  const projects = [
-    {
-      id: 1,
-      title: "Kartverket Reporting System",
-      description: "A full-stack C# .NET application for reporting errors in geospatial data.",
-      tags: ["C#", ".NET", "Geospatial"],
-      imageUrl: "/kartverket.png",
-      link: "/projects/project_1"
-    },
-    {
-      id: 2,
-      title: "NukeTown",
-      description: "An emergency shelter finder app built with React helping users find nearby shelters during crises.",
-      tags: ["React", "API Integration", "Geolocation"],
-      imageUrl: "/nuketown.png",
-      link: "/projects/project_2"
-    },
-    {
-      id: 3,
-      title: "IS-310????",
-      description: "What might this be?",
-      tags: ["C--", "MongoDB", "Bash"],
-      imageUrl: "", // No image for this project
-      link: "/projects/project_3"
-    },
-    {
-      id: 4,
-      title: "Portfolio Website (currently viewing)",
-      description: "A responsive group portfolio website built with Next.js and Tailwind CSS.",
-      tags: ["Next.js", "GitHub API", "Tailwind CSS"],
-      imageUrl: "/portfolio.png", 
-      link: "/"
-    }
-  ];
-
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -71,7 +36,7 @@ export default function ProjectsPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        {projects.map((project, index) => (
+        {projectsSummary.map((project, index) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 20 }}
