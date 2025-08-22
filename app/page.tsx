@@ -50,9 +50,9 @@ interface GitHubProfile {
 }
 
 export default function Home() {
-  
-  const githubUsernames = useMemo(() => ['SimonPortillo', 'mgoberg', 'Azders', 'UngeBakern', 'jmanneraak'], []);
-  
+
+  const githubUsernames = useMemo(() => ['SimonPortillo', 'mgoberg', 'Azders', 'UngeBakern', 'jmanneraak', 'petternaerum'], []);
+
   // Define role mapping for each GitHub username
   const userRoles: Record<string, string> = useMemo(() => ({
     'SimonPortillo': 'Full Stack',
