@@ -28,7 +28,7 @@ export function TeamMembers({ members }: TeamMembersProps) {
                     >
                         <Card className="min-h-[200px]">
                             <CardContent className="pt-6">
-                                <h3 className="mono text-primary text-2xl font-bold">{member.name}</h3>
+                                <h3 className="mono text-primary text-2xl font-extrabold">{member.name}</h3>
                                 <p className="text-sm text-muted-foreground mb-3">{member.role}</p>
                                 <p className="text-sm">{member.background}</p>
                             </CardContent>
