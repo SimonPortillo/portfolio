@@ -120,7 +120,7 @@ export function GitHubProfileCard({
               transition={{ duration: 0.4, delay: 0.1 }}
               className="flex flex-col h-full"
             >
-              <h1 className="serif text-4xl font-bold">{profile?.name || "No name found"}</h1>
+              <h1 className="text-4xl font-bold">{profile?.name || "No name found"}</h1>
               <p className="text-sm text-gray-500">@{profile?.login}</p>
               
               <div className="mono flex flex-wrap gap-2 my-2">
@@ -132,7 +132,7 @@ export function GitHubProfileCard({
                 )}
               </div>
               
-              <p className="mt-2 h-[60px] overflow-hidden">{profile?.bio || "No bio available"}</p>
+              <p className="mt-2 h-[64px] overflow-hidden">{profile?.bio || "No bio available"}</p>
               <div className="flex flex-col mt-auto pt-4 space-y-3">
                 <div className="flex gap-4">
                   <p className="mono text-sm text-gray-500">{profile?.public_repos} repositories</p>

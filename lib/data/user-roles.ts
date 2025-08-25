@@ -3,7 +3,8 @@ export const userRoles: Record<string, string> = {
   'mgoberg': 'Backend',
   'Azders': 'UX',
   'UngeBakern': 'DevOps',
-  'jmanneraak': 'Front End'
+  'jmanneraak': 'Front End',
+  'petternaerum': 'Data Scientist'
 };
 
 export const secondaryRoles: Record<string, string> = {
@@ -11,5 +12,6 @@ export const secondaryRoles: Record<string, string> = {
   'mgoberg': 'API Designer',
   'Azders': 'Interaction Designer',
   'UngeBakern': 'Cloud Architect',
-  'jmanneraak': 'Mobile Developer'
+  'jmanneraak': 'Mobile Developer',
+  'petternaerum': 'Python'
 };
