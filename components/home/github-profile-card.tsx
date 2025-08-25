@@ -105,7 +105,7 @@ export function GitHubProfileCard({
           ) : error ? (
             <motion.p
               key="error-message"
-              className="text-red-500"
+              className="text-destructive"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
@@ -121,8 +121,8 @@ export function GitHubProfileCard({
               className="flex flex-col h-full"
             >
               <h1 className="text-4xl font-bold">{profile?.name || "No name found"}</h1>
-              <p className="text-sm text-gray-500">@{profile?.login}</p>
-              
+              <p className="text-sm text-muted-foreground">@{profile?.login}</p>
+
               <div className="mono flex flex-wrap gap-2 my-2">
                 {userRole && (
                   <Badge variant="default">{userRole}</Badge>
@@ -131,12 +131,12 @@ export function GitHubProfileCard({
                   <Badge variant="outline">{secondaryRole}</Badge>
                 )}
               </div>
-              
-              <p className="mt-2 h-[64px] overflow-hidden">{profile?.bio || "No bio available"}</p>
+
+              <p className="text-foreground mt-2 h-[72px] overflow-hidden">{profile?.bio || "No bio available"}</p>
               <div className="flex flex-col mt-auto pt-4 space-y-3">
                 <div className="flex gap-4">
-                  <p className="mono text-sm text-gray-500">{profile?.public_repos} repositories</p>
-                  <p className="mono text-sm text-gray-500">{profile?.followers} followers</p>
+                  <p className="mono text-sm font-extrabold text-muted">{profile?.public_repos} repositories</p>
+                  <p className="mono text-sm font-extrabold text-muted">{profile?.followers} followers</p>
                 </div>
                 
                 <div className="flex gap-2 w-full">
@@ -146,12 +146,12 @@ export function GitHubProfileCard({
                     rel="noopener noreferrer" 
                     className="flex-1"
                   >
-                    <Button variant="outline" size="sm" className="w-full">
+                    <Button variant="outline" size="sm" className="mono w-full">
                       View Full Profile
                     </Button> 
                   </a>
                   
-                  <RepoDropdown 
+                  <RepoDropdown
                     profile={profile} 
                     loading={repoLoading} 
                     onOpen={onFetchRepos} 

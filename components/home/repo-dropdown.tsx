@@ -30,7 +30,7 @@ export function RepoDropdown({ profile, loading, onOpen }: RepoDropdownProps) {
         <Button 
           variant="secondary" 
           size="sm" 
-          className="whitespace-nowrap"
+          className="mono whitespace-nowrap"
           disabled={loading}
         >
           {loading ? "Loading..." : "Repositories"} <ChevronDown className="ml-2 h-4 w-4" />
@@ -52,7 +52,7 @@ export function RepoDropdown({ profile, loading, onOpen }: RepoDropdownProps) {
                   <div className="flex flex-col">
                     <span className="font-medium">{repo.name}</span>
                     {repo.description && (
-                      <span className="text-xs text-gray-500 truncate max-w-[260px]">
+                      <span className="text-xs text-muted-foreground truncate max-w-[260px]">
                         {repo.description}
                       </span>
                     )}
