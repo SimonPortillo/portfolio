@@ -23,7 +23,7 @@ export default function ProjectsPage() {
         transition={{ duration: 0.6 }}
       >
         <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Our Projects</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
           Explore the various projects we&apos;ve developed throughout our academic journey.
           Each project demonstrates different skills and technologies.
         </p>
@@ -57,14 +57,14 @@ export default function ProjectsPage() {
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center text-gray-500">
+                  <div className="w-full h-48 bg-muted-foreground rounded-md mb-4 flex items-center justify-center text-balance">
                     No Image Available
                   </div>
                 )}
                 <h2 className="text-2xl font-bold">{project.title}</h2>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-muted-foreground mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map(tag => (
                     <Badge key={tag} variant="secondary" className="text-xs">

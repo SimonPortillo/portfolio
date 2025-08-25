@@ -29,8 +29,8 @@ export function GroupInformation({
     >
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <h2 className="serif text-3xl font-bold mb-4">Who We Are</h2>
-        <p>{description}</p>
-        
+        <p className="text-muted-foreground">{description}</p>
+
         <div className="my-6 flex flex-wrap gap-2">
           <Badge className="px-3 py-1">
             {university}
@@ -46,7 +46,7 @@ export function GroupInformation({
           </Badge>
         </div>
         
-        <h3 className="serif text-2xl font-bold mt-8 mb-4">Our Values</h3>
+        <h3 className="serif text-3xl font-bold mt-8 mb-4">Our Values</h3>
         <ul className="space-y-2">
           {values.map((value, index) => (
             <li key={index} className="flex items-start">

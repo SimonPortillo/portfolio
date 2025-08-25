@@ -23,12 +23,12 @@ export function HeroSection({ techBadges }: HeroSectionProps) {
       transition={{ duration: 0.6 }}
     >
       <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Meet Our Study Group</h1>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+      <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
         The students behind our projects. Each team member brings unique skills and expertise.
         Feel free to explore their GitHub cards below to see their projects.
       </p>
-      
-      <blockquote className="italic text-sm text-shadow-2xs text-gray-500 max-w-3xl mx-auto mb-6">
+
+      <blockquote className="italic text-sm text-muted-foreground max-w-3xl mx-auto mb-6">
         &ldquo;Live as if you were to die tomorrow. Learn as if you were to live forever.&rdquo; ― Mahatma Gandhi
       </blockquote>
       

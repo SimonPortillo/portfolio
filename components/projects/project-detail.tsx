@@ -37,7 +37,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
         
         {/* Content */}
         <motion.div 
-          className="relative h-full flex flex-col items-center justify-center text-white p-6 z-10"
+          className="relative h-full flex flex-col items-center justify-center text-primary-foreground p-6 z-10"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -46,7 +46,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           
           <div className="flex flex-wrap gap-2 justify-center mb-8">
             {project.tags.map(tag => (
-              <Badge key={tag} variant="secondary" className="mono bg-white/20 text-white hover:bg-white/30">
+              <Badge key={tag} variant="secondary" className="mono bg-white/20 text-primary-foreground hover:bg-white/30">
                 {tag}
               </Badge>
             ))}
@@ -91,7 +91,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           {/* Project Overview */}
           <section>
             <h2 className="serif text-3xl font-bold mb-4">Project Overview</h2>
-            <p className="text-lg text-gray-700">{project.description}</p>
+            <p className="text-lg text-muted-foreground">{project.description}</p>
           </section>
           
           {/* Team Members */}
@@ -109,9 +109,12 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           {/* Key Features */}
           <section>
             <h2 className="serif text-3xl font-bold mb-4">Key Features</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="space-y-2">
               {project.features.map((feature, index) => (
-                <li key={index} className="text-lg text-gray-700">{feature}</li>
+                <li key={index} className="flex items-start text-lg text-muted-foreground">
+                  <span className="mr-2 text-primary">•</span>
+                  <span>{feature}</span>
+                </li>
               ))}
             </ul>
           </section>
@@ -119,9 +122,12 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           {/* Challenges */}
           <section>
             <h2 className="serif text-3xl font-bold mb-4">Technical Challenges</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="space-y-2">
               {project.challenges.map((challenge, index) => (
-                <li key={index} className="text-lg text-gray-700">{challenge}</li>
+                <li key={index} className="flex items-start text-lg text-muted-foreground">
+                  <span className="mr-2 text-primary">•</span>
+                  <span>{challenge}</span>
+                </li>
               ))}
             </ul>
           </section>
@@ -132,7 +138,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
             
             <div className="space-y-4">
               <div>
-                <h3 className="mono text-xl font-semibold mb-2">Frontend</h3>
+                <h3 className="text-muted-foreground text-xl font-semibold mb-2">Frontend</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.frontend.map(tech => (
                     <Badge key={tech} variant="secondary" className="mono text-sm">
@@ -143,7 +149,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
               </div>
               
               <div>
-                <h3 className="mono text-xl font-semibold mb-2">Backend</h3>
+                <h3 className="text-muted-foreground text-xl font-semibold mb-2">Backend</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.backend.map(tech => (
                     <Badge key={tech} variant="secondary" className="mono text-sm">
@@ -154,7 +160,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
               </div>
               
               <div>
-                <h3 className="mono text-xl font-semibold mb-2">Deployment</h3>
+                <h3 className="text-muted-foreground text-xl font-semibold mb-2">Deployment</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.deployment.map(tech => (
                     <Badge key={tech} variant="secondary" className="mono text-sm">
