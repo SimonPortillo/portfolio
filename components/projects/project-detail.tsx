@@ -42,11 +42,11 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center">{project.title}</h1>
-          
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center text-white">{project.title}</h1>
+
           <div className="flex flex-wrap gap-2 justify-center mb-8">
             {project.tags.map(tag => (
-              <Badge key={tag} variant="secondary" className="mono bg-white/20 text-primary-foreground hover:bg-white/30">
+              <Badge key={tag} variant="secondary" className="mono bg-white/20 text-gray-300 hover:bg-white/30">
                 {tag}
               </Badge>
             ))}
