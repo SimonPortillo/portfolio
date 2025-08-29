@@ -135,8 +135,8 @@ export function GitHubProfileCard({
               <p className="text-foreground mt-2 h-[72px] overflow-hidden">{profile?.bio || "No bio available"}</p>
               <div className="flex flex-col mt-auto pt-4 space-y-3">
                 <div className="flex gap-4">
-                  <p className="mono text-sm font-extrabold text-muted">{profile?.public_repos} repositories</p>
-                  <p className="mono text-sm font-extrabold text-muted">{profile?.followers} followers</p>
+                  <p className="mono text-sm font-extrabold text-muted-foreground">{profile?.public_repos} repositories</p>
+                  <p className="mono text-sm font-extrabold text-muted-foreground">{profile?.followers} followers</p>
                 </div>
                 
                 <div className="flex gap-2 w-full">
