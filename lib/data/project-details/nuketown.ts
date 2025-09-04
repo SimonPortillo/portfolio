@@ -2,24 +2,24 @@ import { ProjectDetail } from '@/types/project';
 
 export const nuketownProject: ProjectDetail = {
   title: "NukeTown",
-  description: "An emergency shelter finder app built with React helping users find nearby shelters during crises.",
+  description: "En app bygget i React som hjelper brukere å finne nærmeste tilfluktsrom under krisesituasjoner.",
   githubUrl: "https://github.com/SimonPortillo/nuketown",
   liveUrl: "https://nuketown-one.vercel.app/",
   heroImage: "/nuketown.png",
-  tags: ["React", "API Integration", "Geolocation", "Emergency Services"],
+  tags: ["React", "API-integrasjon", "Geolokasjon", "Nødtjenester"],
   teamMembers: ["Simon Portillo", "Martin Goberg"],
   features: [
-    "Real-time shelter location mapping",
-    "Distance calculation from user's current position",
-    "Filtering shelters by capacity and facilities"
+    "Sanntids kartvisning av tilfluktsrom",
+    "Avstandskalkulering fra brukerens nåværende posisjon",
+    "Filtrering av tilfluktsrom etter kapasitet og fasiliteter"
   ],
   challenges: [
-    "Ensuring accurate geolocation data in emergency situations",
-    "Ensuring the data for the shelters are updated and trustworthy"
+    "Sikre nøyaktige geolokasjonsdata i nødsituasjoner",
+    "Sikre at data om tilfluktsrom er oppdatert og pålitelig"
   ],
   technologies: {
     frontend: ["React", "Maplibre", "Mapbox"],
-    backend: ["Node.js", "Supabase", "API's"],
+    backend: ["Node.js", "Supabase", "API-er"],
     deployment: ["Vercel"]
   }
 };

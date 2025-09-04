@@ -22,10 +22,9 @@ export default function ProjectsPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Our Projects</h1>
+        <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Våre Prosjekter</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-          Explore the various projects we&apos;ve developed throughout our academic journey.
-          Each project demonstrates different skills and technologies.
+          Utforsk prosjektene vi har jobbet med som en del av studiegruppen vår. Hvert prosjekt reflekterer vår kollektive innsats, ferdigheter og lidenskap for teknologi.
         </p>
       </motion.section>
       
@@ -58,7 +57,7 @@ export default function ProjectsPage() {
                   </div>
                 ) : (
                   <div className="w-full h-48 bg-muted-foreground rounded-md mb-4 flex items-center justify-center text-balance">
-                    No Image Available
+                    Ingen bilder tilgjengelig
                   </div>
                 )}
                 <h2 className="text-2xl font-bold">{project.title}</h2>
@@ -75,7 +74,7 @@ export default function ProjectsPage() {
               </CardContent>
               <CardFooter>
                 <Button asChild className="w-full">
-                  <a href={project.link}>View Project Details</a>
+                  <a href={project.link}>Se prosjekt detaljer</a>
                 </Button>
               </CardFooter>
             </Card>
@@ -90,7 +89,7 @@ export default function ProjectsPage() {
         transition={{ duration: 0.6, delay: 0.8 }}
       >
         <p className="text-gray-600">
-          Our group is constantly working on new and exciting projects.
+          Vi jobber stadig med nye prosjekter.
         </p>
       </motion.section>
     </motion.main>

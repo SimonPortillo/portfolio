@@ -19,10 +19,10 @@ export const projectsSummary: ProjectSummary[] = [
   },
   {
     id: 3,
-    title: "IS-310????",
-    description: "What might this be?",
-    tags: ["C--", "MongoDB", "Bash"],
-    imageUrl: "", // No image for this project
+    title: "Digin-Teknologiradar",
+    description: "En digital plattform for å kartlegge og evaluere nye teknologier.",
+    tags: ["React", "Vercel", "TypeScript"],
+    imageUrl: "/teknologiradar.png", 
     link: "/projects/project_3"
   },
   {

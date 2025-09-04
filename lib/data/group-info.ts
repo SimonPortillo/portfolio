@@ -24,13 +24,13 @@ export const groupInfo: GroupInformation = {
     {
       name: "Martin Goberg",
       role: "Backend Developer",
-      background: "Martin specializes in backend architecture and database design. He has strong skills in C# and .NET development.",
+      background: "Jeg er 26 år og kommer fra Skien. På fritiden liker jeg å være sosial uten venner. Mine sterkeste erfaringer er innenfor webutvikling, særlig med React og Next.js, PostgreSQL og Supabase. Jeg har også sterke erfaringer innenfor diverse programmeringsspråk som C#, Java og Python. Innhar også sterke lederegenskaper fra arbeidet hos Ryde Technology.",
       linkedin: "https://www.linkedin.com/in/martin-goberg-678534248/"
     },
     {
       name: "Jone Manneraak",
       role: "Front End Developer",
-      background: "Jone focuses on creating intuitive and responsive user interfaces. He has a keen eye for design and user experience.",
+      background: "Mitt navn er Jone (28), og jeg kommer fra Mandal. Jeg har alltid vært nysgjerrig på teknologi og hvordan det kombineres med kreativitet. Jeg begynte tidlig å leke med HTML og CSS, uten å helt forstå hva jeg drev med. På videregående gikk jeg Medier og Kommunikasjon på Noroff, med hovedfokus på grafisk design. Senere tok jeg en bachelorgrad i elektronisk musikk.",
       linkedin: "https://www.linkedin.com/in/jone-manneraak-123456789/"
     },
     {
@@ -48,7 +48,7 @@ export const groupInfo: GroupInformation = {
     {
       name: "Petter Kløcker Nærum",
       role: "Project Manager",
-      background: "Petter oversees project timelines and ensures successful delivery of project goals.",
+      background: "Jeg er 23 år fra Skien, og er bosatt og studerer i Kristiansand. Jeg interesserer meg for hvordan teknologi kan videreutvikles og skape en verdi. Frontend design og ideutvikling er felt jeg trives godt med. Jeg er kreativ, nysgjerrig og opptatt av å stille spørsmål. Jeg liker å jobbe i team, og setter pris på en god diskusjon.",
       linkedin: "https://www.linkedin.com/in/petter-kl%C3%B8cker-n%C3%A6rum-92b172293/"
     }
   ],

@@ -90,7 +90,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
         >
           {/* Project Overview */}
           <section>
-            <h2 className="serif text-3xl font-bold mb-4">Project Overview</h2>
+            <h2 className="serif text-3xl font-bold mb-4">Prosjekt Oversikt</h2>
             <p className="text-lg text-muted-foreground">{project.description}</p>
           </section>
           
@@ -108,7 +108,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           
           {/* Key Features */}
           <section>
-            <h2 className="serif text-3xl font-bold mb-4">Key Features</h2>
+            <h2 className="serif text-3xl font-bold mb-4">Nøkkelfunksjoner</h2>
             <ul className="space-y-2">
               {project.features.map((feature, index) => (
                 <li key={index} className="flex items-start text-lg text-muted-foreground">
@@ -121,7 +121,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           
           {/* Challenges */}
           <section>
-            <h2 className="serif text-3xl font-bold mb-4">Technical Challenges</h2>
+            <h2 className="serif text-3xl font-bold mb-4">Tekniske Utfordringer</h2>
             <ul className="space-y-2">
               {project.challenges.map((challenge, index) => (
                 <li key={index} className="flex items-start text-lg text-muted-foreground">
@@ -134,8 +134,8 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
           
           {/* Technologies Used */}
           <section>
-            <h2 className="serif text-3xl font-bold mb-4">Technologies Used</h2>
-            
+            <h2 className="serif text-3xl font-bold mb-4">Teknologier Brukt</h2>
+
             <div className="space-y-4">
               <div>
                 <h3 className="text-muted-foreground text-xl font-semibold mb-2">Frontend</h3>

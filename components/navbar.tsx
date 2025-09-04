@@ -30,11 +30,11 @@ export function Navbar() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/">Home</Link>
+                  <Link href="/">Hjem</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Prosjekter</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
@@ -44,30 +44,30 @@ export function Navbar() {
                           href="/projects"
                         >
                           <div className="mt-4 mb-2 text-lg font-medium">
-                            Group Projects Overview
+                            Oversikt over gruppeprosjekter
                           </div>
                           <p className="text-muted-foreground text-sm leading-tight">
-                            Explore the various projects we&apos;ve developed throughout our academic journey.
-                            Each project demonstrates different skills and technologies.
+                            Utforsk de ulike prosjektene vi har utviklet gjennom vår akademiske reise.
+                            Hvert prosjekt demonstrerer forskjellige ferdigheter og teknologier.
                           </p>
                         </Link>
                       </NavigationMenuLink>
                     </li>
                     <ListItem href="/projects/project_1" title="Kartverket Reporting System">
-                      A full stack C# .NET application for reporting errors in geospatial data.
+                      en full-stack C# .NET applikasjon for rapportering av feil i kartdata.
                     </ListItem>
                     <ListItem href="/projects/project_2" title="NukeTown">
-                      An emergency shelter finder app built with React helping users find nearby shelters during crises.
+                      en app for å finne nærmeste tilfluktsrom i en nødsituasjon.
                     </ListItem>
-                    <ListItem href="/projects/project_3" title="In progress">
-                      Coming soon! 
+                    <ListItem href="/projects/project_3" title="Teknologiradar">
+                      en teknologiradar som konsept for Digin.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/about">About</Link>
+                  <Link href="/about">Om oss</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>

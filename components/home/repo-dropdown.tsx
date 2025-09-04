@@ -73,17 +73,17 @@ export function RepoDropdown({ profile, loading, onOpen }: RepoDropdownProps) {
               </DropdownMenuItem>
             ))
           ) : (
-            <DropdownMenuItem disabled>No public repositories</DropdownMenuItem>
+            <DropdownMenuItem disabled>Ingen offentlige repositories</DropdownMenuItem>
           )
         ) : loading ? (
           <DropdownMenuItem disabled>
             <div className="flex items-center justify-center w-full py-2">
               <Skeleton className="h-4 w-4 rounded-full mr-2" />
-              <span>Loading repositories...</span>
+              <span>Laster repositories...</span>
             </div>
           </DropdownMenuItem>
         ) : (
-          <DropdownMenuItem disabled>Click to load repositories</DropdownMenuItem>
+          <DropdownMenuItem disabled>klikk for å laste repositories</DropdownMenuItem>
         )}
         
         {profile?.repos && profile.repos.length > 8 && (
@@ -96,7 +96,7 @@ export function RepoDropdown({ profile, loading, onOpen }: RepoDropdownProps) {
                 rel="noopener noreferrer"
                 className="cursor-pointer text-center font-medium"
               >
-                View all repositories
+                Vis alle repositories
               </a>
             </DropdownMenuItem>
           </>

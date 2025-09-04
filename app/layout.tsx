@@ -7,7 +7,7 @@ import { sans, serif, mono } from "@/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Portfolio website",
-  description: "Showcasing my work and projects",
+  description: "Portfolio website built with Next.js, TypeScript, and Shadcn UI.",
 };
 
 export default function RootLayout({

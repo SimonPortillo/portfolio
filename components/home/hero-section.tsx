@@ -22,14 +22,14 @@ export function HeroSection({ techBadges }: HeroSectionProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Meet Our Study Group</h1>
+      <h1 className="serif text-5xl md:text-6xl font-bold mb-4">Møt Studiegruppen Vår</h1>
       <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-        The students behind our projects. Each team member brings unique skills and expertise.
-        Feel free to explore their GitHub cards below to see their projects.
+        Studentene bak prosjektene våre. Hver deltaker bidrar med unike ferdigheter og kompetanse.
+        Utforsk gjerne GitHub-kortene deres nedenfor for å se prosjektene.
       </p>
 
       <blockquote className="italic text-sm text-muted-foreground max-w-3xl mx-auto mb-6">
-        &ldquo;Live as if you were to die tomorrow. Learn as if you were to live forever.&rdquo; ― Mahatma Gandhi
+        &ldquo;klokka møde me imårå&rdquo; ― Anders Fløyelsmyk
       </blockquote>
       
       <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto my-8">

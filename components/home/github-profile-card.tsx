@@ -136,7 +136,7 @@ export function GitHubProfileCard({
               <div className="flex flex-col mt-auto pt-4 space-y-3">
                 <div className="flex gap-4">
                   <p className="mono text-sm font-extrabold text-muted-foreground">{profile?.public_repos} repositories</p>
-                  <p className="mono text-sm font-extrabold text-muted-foreground">{profile?.followers} followers</p>
+                  <p className="mono text-sm font-extrabold text-muted-foreground">{profile?.followers} følgere</p>
                 </div>
                 
                 <div className="flex gap-2 w-full">
@@ -147,7 +147,7 @@ export function GitHubProfileCard({
                     className="flex-1"
                   >
                     <Button variant="outline" size="sm" className="mono w-full">
-                      View Full Profile
+                      Vis på GitHub
                     </Button> 
                   </a>
                   

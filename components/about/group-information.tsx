@@ -28,7 +28,7 @@ export function GroupInformation({
       transition={{ duration: 0.5, delay: 0.2 }}
     >
       <div className="prose prose-lg dark:prose-invert max-w-none">
-        <h2 className="serif text-3xl font-bold mb-4">Who We Are</h2>
+        <h2 className="serif text-3xl font-bold mb-4">Hvem vi er</h2>
         <p className="text-muted-foreground">{description}</p>
 
         <div className="my-6 flex flex-wrap gap-2">
@@ -45,8 +45,8 @@ export function GroupInformation({
             Est. {founded}
           </Badge>
         </div>
-        
-        <h3 className="serif text-3xl font-bold mt-8 mb-4">Our Values</h3>
+
+          <h3 className="serif text-3xl font-bold mt-8 mb-4">Våre verdier</h3>
         <ul className="space-y-2">
           {values.map((value, index) => (
             <li key={index} className="flex items-start">

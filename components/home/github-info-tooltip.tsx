@@ -22,11 +22,11 @@ export function GitHubInfoTooltip() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger className="flex items-center gap-1">
-            Profile information is fetched from GitHub  
+            Profilinformasjon hentes fra GitHub  
             <InfoIcon className="h-4 w-4" />
           </TooltipTrigger>
           <TooltipContent>
-            <p className="max-w-xs pb-1.5 text-center">All profile images, bio information, and repository data are fetched directly from GitHub&apos;s API in real-time.</p>
+            <p className="max-w-xs pb-1.5 text-center">Alle profilbilder, bio-informasjon og repository-data hentes direkte fra GitHubs API i sanntid.</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

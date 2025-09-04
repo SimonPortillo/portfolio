@@ -1,9 +1,8 @@
+"use client"
 
+import { ProjectDetailPage } from "@/components/projects/project-detail"
+import { teknologiradarProject } from "@/lib/data/project-details"
 
 export default function Project3Page() {
-  return (
-    <main>
-      <h1>Project 3</h1>
-    </main>
-  )
+  return <ProjectDetailPage project={teknologiradarProject} />
 }

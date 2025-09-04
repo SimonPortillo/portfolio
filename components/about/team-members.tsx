@@ -18,8 +18,8 @@ export function TeamMembers({ members }: TeamMembersProps) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
         >
-            <h2 className="serif text-4xl font-bold mb-8 text-center">Our Team</h2>
-            
+            <h2 className="serif text-4xl font-bold mb-8 text-center">Vårt team</h2>
+
             <div className="grid gap-6 md:grid-cols-2">
                 {members.map((member, index) => (
                     <motion.div
