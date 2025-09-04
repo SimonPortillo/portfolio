@@ -6,7 +6,7 @@ export const groupInfo: GroupInformation = {
   department: "Fakultet for samfunnsvitenskap",
   program: "IT og Informasjonssystemer",
   founded: "August 2024",
-  description: "Vi er en ambisiøs gruppe som er glad i utfordring, og vi ser for oss å jobbe med et bachelorprosjekt hvor vi får brukt våre ferdigheter og som kan bygge på vår tekniske kompetanse. \n \n Gruppen vår består av allsidige medlemmer som utfyller hverandre godt og bygger på hverandres styrker. Vi har et sterkt vennskap og mange felles interesser, noe som bidrar til et godt samhold både faglig og sosialt. Denne kombinasjonen gjør at vi samarbeider effektivt, støtter hverandre underveis og fungerer godt som et agilt team hvor vi kan tilpasse oss endringer og utnytte styrkene til hvert enkelt medlem.",
+  description: "Gruppen vår består av allsidige medlemmer som utfyller hverandre godt og bygger på hverandres styrker. Vi har et sterkt vennskap og mange felles interesser, noe som bidrar til et godt samhold både faglig og sosialt. Denne kombinasjonen gjør at vi samarbeider effektivt, støtter hverandre underveis og fungerer godt som et agilt team hvor vi kan tilpasse oss endringer og utnytte styrkene til hvert enkelt medlem.",
   values: [
     "Samarbeid og teamarbeid",
     "Innovasjon og kreativitet",

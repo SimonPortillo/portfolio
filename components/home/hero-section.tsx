@@ -27,10 +27,6 @@ export function HeroSection({ techBadges }: HeroSectionProps) {
         Studentene bak prosjektene våre. Hver deltaker bidrar med unike ferdigheter og kompetanse.
         Utforsk gjerne GitHub-kortene deres nedenfor for å se prosjektene.
       </p>
-
-      <blockquote className="italic text-sm text-muted-foreground max-w-3xl mx-auto mb-6">
-        &ldquo;klokka møde me imårå&rdquo; ― Anders Fløyelsmyk
-      </blockquote>
       
       <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto my-8">
         {techBadges.map((badge, index) => (

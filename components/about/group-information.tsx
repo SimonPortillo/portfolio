@@ -42,7 +42,7 @@ export function GroupInformation({
             {program}
           </Badge>
           <Badge variant="outline" className="px-3 py-1">
-            Est. {founded}
+            Etablert. {founded}
           </Badge>
         </div>
 
