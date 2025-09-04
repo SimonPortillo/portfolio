@@ -1,17 +1,17 @@
 export const userRoles: Record<string, string> = {
-  'SimonPortillo': 'Full Stack',
-  'mgoberg': 'Backend',
-  'Azders': 'UX',
-  'UngeBakern': 'DevOps',
-  'jmanneraak': 'Front End',
-  'petternaerum': 'Data Scientist'
+  'SimonPortillo': 'Fullstack',
+  'mgoberg': 'Fullstack',
+  'Azders': 'Systemutvikling',
+  'UngeBakern': 'Team Lead',
+  'jmanneraak': 'Frontend',
+  'petternaerum': 'UX'
 };
 
 export const secondaryRoles: Record<string, string> = {
-  'SimonPortillo': 'Next.js',
-  'mgoberg': 'API Designer',
-  'Azders': 'Interaction Designer',
-  'UngeBakern': 'Cloud Architect',
-  'jmanneraak': 'Mobile Developer',
-  'petternaerum': 'Python'
+  'SimonPortillo': 'React',
+  'mgoberg': 'API integrasjon',
+  'Azders': 'Java',
+  'UngeBakern': 'Scrum Master',
+  'jmanneraak': 'Design',
+  'petternaerum': 'Design'
 };

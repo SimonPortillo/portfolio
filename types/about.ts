@@ -3,6 +3,7 @@ export interface GroupMember {
   role: string;
   background: string;
   linkedin: string;
+  image?: string; // Path to public/ image (e.g. "/simon.jpg")
 }
 
 export interface GroupInformation {

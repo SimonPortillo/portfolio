@@ -29,7 +29,7 @@ export function GroupInformation({
     >
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <h2 className="serif text-3xl font-bold mb-4">Hvem vi er</h2>
-        <p className="text-muted-foreground">{description}</p>
+        <p className="text-muted-foreground whitespace-pre-line">{description}</p>
 
         <div className="my-6 flex flex-wrap gap-2">
           <Badge className="px-3 py-1">

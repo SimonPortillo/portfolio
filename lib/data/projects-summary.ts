@@ -3,17 +3,17 @@ import { ProjectSummary } from '@/types/project';
 export const projectsSummary: ProjectSummary[] = [
   {
     id: 1,
-    title: "Kartverket Reporting System",
-    description: "A full-stack C# .NET application for reporting errors in geospatial data.",
-    tags: ["C#", ".NET", "Geospatial"],
+  title: "Kartverket Rapporteringssystem",
+  description: "En fullstack C# .NET-applikasjon for å rapportere feil i geodata.",
+  tags: ["C#", ".NET", "Geodata"],
     imageUrl: "/kartverket.png",
     link: "/projects/project_1"
   },
   {
     id: 2,
     title: "NukeTown",
-    description: "An emergency shelter finder app built with React helping users find nearby shelters during crises.",
-    tags: ["React", "API Integration", "Geolocation"],
+  description: "En React-app som hjelper brukere å finne nærmeste tilfluktsrom i krisesituasjoner.",
+  tags: ["React", "API-integrasjon", "Geolokasjon"],
     imageUrl: "/nuketown.png",
     link: "/projects/project_2"
   },
@@ -27,9 +27,9 @@ export const projectsSummary: ProjectSummary[] = [
   },
   {
     id: 4,
-    title: "Portfolio Website (currently viewing)",
-    description: "A responsive group portfolio website built with Next.js and Tailwind CSS.",
-    tags: ["Next.js", "GitHub API", "Tailwind CSS"],
+  title: "Porteføljenettsted (viser nå)",
+  description: "Et responsivt gruppeporteføljenettsted bygget med Next.js og Tailwind CSS.",
+  tags: ["Next.js", "GitHub API", "Tailwind CSS"],
     imageUrl: "/portfolio.png", 
     link: "/"
   }
