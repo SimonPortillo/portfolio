@@ -3,15 +3,15 @@ import { ProjectDetail } from '@/types/project';
 export const teknologiradarProject: ProjectDetail = {
   title: "Digin-Teknologiradar",
   description: "En digital plattform for å kartlegge og evaluere nye teknologier.",
-  githubUrl: "https://github.com/SimonPortillo/digin-teknologiradar",
-  liveUrl: "https://digin-teknologiradar.vercel.app/",
+  githubUrl: "https://github.com/mgoberg/Teknologiradar",
+  liveUrl: "https://teknologiradar.vercel.app/",
   heroImage: "/teknologiradar.png",
-  tags: ["React", "API Integration", "Geolocation", "Emergency Services"],
+  tags: ["React", "MVP", "Digin"],
   teamMembers: ["Martin Goberg","Jone Manneraak", "Petter Kløcker Nærum", "Amund Mikalsen", "Anders Fløysvik", "Simon Portillo"],
   features: [
-    "Real-time shelter location mapping",
-    "Distance calculation from user's current position",
-    "Filtering shelters by capacity and facilities"
+    "Oversikt over nye og kommende teknologier",
+    "Detaljerte beskrivelser og vurderinger av hver teknologi",
+    "Brukervennlig grensesnitt for enkel navigasjon",
   ],
   challenges: [
     "Finne pålitelige ressurser for nye teknologier",

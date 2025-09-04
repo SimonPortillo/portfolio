@@ -6,7 +6,7 @@ export const kartverketProject: ProjectDetail = {
   githubUrl: "https://github.com/mgoberg/kartverketprosjekt",
   liveUrl: "https://kartverket-demo.azurewebsites.net",
   heroImage: "/kartverket.png",
-  tags: ["C#", "ASP.NET Core ", "Geospatial", "MariaDB"],
+  tags: ["C#", "ASP.NET Core ", "GIS", "MariaDB"],
   teamMembers: ["Simon Portillo", "Martin Goberg", "Jone Manneraak", "Amund Mikalsen", "Anders Fløysvik"],
   features: [
     "Interaktivt kartgrensesnitt for presis markering av feilsted",
