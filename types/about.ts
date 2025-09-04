@@ -2,6 +2,7 @@ export interface GroupMember {
   name: string;
   role: string;
   background: string;
+  linkedin: string;
 }
 
 export interface GroupInformation {

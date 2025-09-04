@@ -3,6 +3,8 @@
 import { motion } from "motion/react"
 import { Card, CardContent } from "@/components/ui/card"
 import { GroupMember } from "@/types/about"
+import  {LinkedInLogoIcon} from "@radix-ui/react-icons"
+import Link from "next/link"
 
 interface TeamMembersProps {
     members: GroupMember[];
@@ -31,6 +33,9 @@ export function TeamMembers({ members }: TeamMembersProps) {
                                 <h3 className="mono text-primary text-2xl font-extrabold">{member.name}</h3>
                                 <p className="text-sm text-muted-foreground mb-3">{member.role}</p>
                                 <p className="text-sm">{member.background}</p>
+                                <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn profile of ${member.name}`}>
+                                    <LinkedInLogoIcon className="h-7 w-7 mt-4 hover:text-primary transition-colors duration-100" />
+                                </Link>
                             </CardContent>
                         </Card>
                     </motion.div>

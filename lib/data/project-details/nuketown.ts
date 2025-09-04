@@ -19,7 +19,7 @@ export const nuketownProject: ProjectDetail = {
   ],
   technologies: {
     frontend: ["React", "Maplibre", "Mapbox"],
-    backend: ["Node.js", "Geonorge", "API's"],
+    backend: ["Node.js", "Supabase", "API's"],
     deployment: ["Vercel"]
   }
 };
