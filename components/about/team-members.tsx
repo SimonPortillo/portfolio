@@ -31,13 +31,13 @@ export function TeamMembers({ members }: TeamMembersProps) {
                     >
                         <Card className="min-h-[240px] overflow-hidden p-0">
                             <CardContent className="p-0 flex flex-col sm:flex-row h-full w-full">
-                                <div className="sm:w-64 w-full flex flex-col items-center sm:items-start gap-4 bg-accent/70 dark:bg-accent/40 px-8 py-10">
+                                <div className="sm:w-64 w-full flex flex-col items-center sm:items-start gap-4 bg-muted/70 px-8 py-10">
                                     <Avatar className="h-32 w-32 shadow-inner ring-2 ring-accent-foreground/20">
                                         {member.image && <AvatarImage src={member.image} alt={member.name} />}
                                         <AvatarFallback className="text-lg font-semibold">{member.name.split(' ').map(n => n[0]).slice(0,2).join('')}</AvatarFallback>
                                     </Avatar>
                                     <div className="text-center sm:text-left w-full">
-                                        <h3 className="mono text-primary text-2xl font-extrabold leading-tight">{member.name}</h3>
+                                        <h3 className="mono text-accent text-2xl font-extrabold leading-tight">{member.name}</h3>
                                         <p className="text-sm text-muted-foreground tracking-wide mb-2">{member.role}</p>
                                         <div className="mt-auto pt-2">
                                             <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn profil til ${member.name}`} className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors text-sm">
