@@ -37,7 +37,7 @@ export function TeamMembers({ members }: TeamMembersProps) {
                                         <AvatarFallback className="text-lg font-semibold">{member.name.split(' ').map(n => n[0]).slice(0,2).join('')}</AvatarFallback>
                                     </Avatar>
                                     <div className="text-center sm:text-left w-full">
-                                        <h3 className="mono text-accent text-2xl font-extrabold leading-tight">{member.name}</h3>
+                                        <h3 className="mono text-primary text-2xl font-extrabold leading-tight">{member.name}</h3>
                                         <p className="text-sm text-muted-foreground tracking-wide mb-2">{member.role}</p>
                                         <div className="mt-auto pt-2">
                                             <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn profil til ${member.name}`} className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors text-sm">

@@ -4,7 +4,7 @@ export const kartverketProject: ProjectDetail = {
   title: "Kartverket Rapporteringssystem",
   description: "En fullstack C# .NET-applikasjon for å rapportere feil i geodata. Systemet lar brukere identifisere og rapportere unøyaktigheter i Norges offisielle kart og forbedrer kvaliteten på nasjonal geografisk informasjon.",
   githubUrl: "https://github.com/mgoberg/kartverketprosjekt",
-  liveUrl: "https://kartverket-demo.azurewebsites.net",
+  liveUrl: "",
   heroImage: "/kartverket.png",
   tags: ["C#", "ASP.NET Core ", "GIS", "MariaDB"],
   teamMembers: ["Simon Portillo", "Martin Goberg", "Jone Manneraak", "Amund Mikalsen", "Anders Fløysvik"],

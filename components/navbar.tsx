@@ -18,14 +18,14 @@ import { Separator } from "@/components/ui/separator";
 export function Navbar() {
   return (
     <div className="sticky top-0 w-full bg-background/60 backdrop-blur-sm z-50">
-      <div className="flex items-center justify-between w-full">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center w-full">
         {/* Left section - empty for balance */}
-        <div className="flex-1 flex justify-start">
-          {/* Empty div for flex balance */}
+        <div className="justify-self-start">
+          {/* Empty div for balance */}
         </div>
 
         {/* Center section - Navigation */}
-        <div className="flex-1 flex justify-center">
+        <div className="justify-self-center">
           <NavigationMenu viewport={false}>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -54,13 +54,13 @@ export function Navbar() {
                       </NavigationMenuLink>
                     </li>
                     <ListItem href="/projects/project_1" title="Kartverket Reporting System">
-                      en full-stack C# .NET applikasjon for rapportering av feil i kartdata.
+                      En full-stack C# .NET applikasjon for rapportering av feil i kartdata.
                     </ListItem>
                     <ListItem href="/projects/project_2" title="NukeTown">
-                      en app for å finne nærmeste tilfluktsrom i en nødsituasjon.
+                      En app for å finne nærmeste tilfluktsrom i en nødsituasjon.
                     </ListItem>
                     <ListItem href="/projects/project_3" title="Teknologiradar">
-                      en teknologiradar som konsept for Digin.
+                      En teknologiradar som konsept for Digin.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
