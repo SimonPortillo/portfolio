@@ -21,7 +21,7 @@ interface RepoDropdownProps {
 
 export function RepoDropdown({ profile, loading, onOpen }: RepoDropdownProps) {
   return (
-    <DropdownMenu onOpenChange={(open) => {
+    <DropdownMenu modal={false} onOpenChange={(open) => {
       if (open && !profile?.repos && !loading) {
         onOpen();
       }
