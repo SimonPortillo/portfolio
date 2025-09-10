@@ -30,8 +30,11 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
         </Link>
       </div>
 
-      {/* Blurred Hero Section with Project Name and GitHub Link */}
-      <div className="relative w-full h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[450px] overflow-hidden z-0 pt-12 sm:pt-16">
+      {/* Full-width Blurred Hero Section with Project Name and GitHub Link */}
+      <div 
+        className="relative w-[100vw] h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[450px] overflow-hidden z-0 -mx-4 sm:ml-[calc(-50vw+50%)] sm:w-[100vw]"
+        style={{ maxWidth: 'none' }}
+      >
         {/* Background blurred image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -63,7 +66,7 @@ export function ProjectDetailPage({ project }: ProjectDetailPageProps) {
             ))}
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto max-w-sm sm:max-w-none">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-2xs sm:w-auto max-w-sm sm:max-w-none">
             <Button 
               variant="default" 
               className="gap-2 text-sm sm:text-base"
