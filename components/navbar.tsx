@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { motion, AnimatePresence } from "motion/react"
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -20,7 +21,12 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 w-full bg-background/40 backdrop-blur-sm border-b border-border/40 p-4">
+    <motion.div 
+      className="fixed top-0 left-0 right-0 z-50 w-full bg-background/40 backdrop-blur-sm border-b border-border/40 p-4"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4">
         {/* Desktop Navigation */}
         <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] items-center w-full py-2">
@@ -96,67 +102,127 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <motion.div
+                animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+              >
+                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </motion.div>
             </Button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border/40 py-4">
-            <nav className="flex flex-col space-y-3">
-              <Link 
-                href="/" 
-                className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              className="md:hidden border-t border-border/40 py-4 overflow-hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <motion.nav 
+                className="flex flex-col space-y-3"
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
+                exit={{ y: -20 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                Hjem
-              </Link>
-              <Link 
-                href="/projects" 
-                className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1, duration: 0.3 }}
               >
-                Prosjekter
-              </Link>
-              <div className="px-3 py-1">
+                <Link 
+                  href="/" 
+                  className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Hjem
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                <Link 
+                  href="/projects" 
+                  className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Prosjekter
+                </Link>
+              </motion.div>
+              <motion.div 
+                className="px-3 py-1"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.3 }}
+              >
                 <div className="text-sm font-medium text-muted-foreground mb-2">Spesifikke prosjekter:</div>
                 <div className="pl-4 space-y-1">
-                  <Link 
-                    href="/projects/project_1" 
-                    className="block py-1 text-sm hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                  <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.35, duration: 0.2 }}
                   >
-                    Kartverket Reporting System
-                  </Link>
-                  <Link 
-                    href="/projects/project_2" 
-                    className="block py-1 text-sm hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    <Link 
+                      href="/projects/project_1" 
+                      className="block py-1 text-sm hover:text-primary transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Kartverket Reporting System
+                    </Link>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4, duration: 0.2 }}
                   >
-                    NukeTown
-                  </Link>
-                  <Link 
-                    href="/projects/project_3" 
-                    className="block py-1 text-sm hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    <Link 
+                      href="/projects/project_2" 
+                      className="block py-1 text-sm hover:text-primary transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      NukeTown
+                    </Link>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.45, duration: 0.2 }}
                   >
-                    Teknologiradar
-                  </Link>
+                    <Link 
+                      href="/projects/project_3" 
+                      className="block py-1 text-sm hover:text-primary transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Teknologiradar
+                    </Link>
+                  </motion.div>
                 </div>
-              </div>
-              <Link 
-                href="/about" 
-                className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.3 }}
               >
-                Om oss
-              </Link>
-            </nav>
-          </div>
+                <Link 
+                  href="/about" 
+                  className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Om oss
+                </Link>
+              </motion.div>
+            </motion.nav>
+          </motion.div>
         )}
+        </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

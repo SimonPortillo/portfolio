@@ -31,8 +31,8 @@ export function GitHubProfileCard({
   onFetchRepos 
 }: GitHubProfileCardProps) {
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="flex items-center justify-center">
+    <Card className="flex flex-col min-h-[400px] w-full">
+      <CardHeader className="flex items-center justify-center pb-4">
         <AnimatePresence mode="wait">
           {loading ? (
             <motion.div
@@ -134,28 +134,30 @@ export function GitHubProfileCard({
 
               <p className="text-foreground mt-2 h-[72px] overflow-hidden">{profile?.bio || "No bio available"}</p>
               <div className="flex flex-col mt-auto pt-4 space-y-3">
-                <div className="flex gap-4">
+                <div className="flex justify-left gap-6">
                   <p className="mono text-sm font-extrabold text-muted-foreground">{profile?.public_repos} repositories</p>
                   <p className="mono text-sm font-extrabold text-muted-foreground">{profile?.followers} følgere</p>
                 </div>
                 
-                <div className="flex gap-2 w-full">
+                <div className="flex gap-3 w-full justify-left">
                   <a 
                     href={profile?.html_url}
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex-1"
+                    className="flex-1 max-w-[140px]"
                   >
                     <Button variant="outline" size="sm" className="mono w-full">
                       Vis på GitHub
                     </Button> 
                   </a>
                   
-                  <RepoDropdown
-                    profile={profile} 
-                    loading={repoLoading} 
-                    onOpen={onFetchRepos} 
-                  />
+                  <div className="flex-1 max-w-[140px]">
+                    <RepoDropdown
+                      profile={profile} 
+                      loading={repoLoading} 
+                      onOpen={onFetchRepos} 
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -30,7 +30,7 @@ export function RepoDropdown({ profile, loading, onOpen }: RepoDropdownProps) {
         <Button 
           variant="secondary" 
           size="sm" 
-          className="mono whitespace-nowrap"
+          className="mono whitespace-nowrap w-full"
           disabled={loading}
         >
           {loading ? "Loading..." : "Repositories"} <ChevronDown className="ml-2 h-4 w-4" />
