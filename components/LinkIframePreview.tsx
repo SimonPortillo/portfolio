@@ -85,7 +85,7 @@ export default function LinkIframePreview({ href, children, width = 420, height 
             >
               <div className="flex flex-col items-center gap-2">
                 <div className="w-10 h-10 border-4 border-primary/25 border-t-primary rounded-full animate-spin" />
-                <div className="text-sm text-slate-600">Loading preview…</div>
+                <div className="text-sm text-slate-600">Laster forhåndsvisning…</div>
               </div>
             </motion.div>
           )}
@@ -96,7 +96,7 @@ export default function LinkIframePreview({ href, children, width = 420, height 
               animate={{ opacity: 1 }}
               transition={{ duration: 0.12 }}
             >
-              <div className="p-3 text-sm text-slate-600">Preview not available (site blocks embedding)</div>
+              <div className="p-3 text-sm text-slate-600">Forhåndsvisning ikke tilgjengelig (site blocks embedding)</div>
             </motion.div>
           )}
 

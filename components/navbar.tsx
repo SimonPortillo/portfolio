@@ -41,7 +41,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Prosjekter</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid gap-2 w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] p-4">
+                    <ul className="grid gap-2 w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <Link
@@ -80,7 +80,7 @@ export function Navbar() {
           </div>
 
           {/* Right section - Theme Toggle */}
-          <div className="flex-1 flex justify-end">
+          <div className="justify-self-end">
             <ThemeToggle />
           </div>
         </div>
