@@ -173,7 +173,7 @@ export function Navbar() {
                       className="block py-1 text-sm hover:text-primary transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Kartverket Reporting System
+                      Kartverket Rapporteringssystem
                     </Link>
                   </motion.div>
                   <motion.div
