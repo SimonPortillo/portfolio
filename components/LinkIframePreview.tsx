@@ -96,7 +96,7 @@ export default function LinkIframePreview({ href, children, width = 420, height 
               animate={{ opacity: 1 }}
               transition={{ duration: 0.12 }}
             >
-              <div className="p-3 text-sm text-slate-600">Forhåndsvisning ikke tilgjengelig (site blocks embedding)</div>
+              <div className="p-3 text-sm text-slate-600">Forhåndsvisning ikke tilgjengelig (siden blokkerer embedding)</div>
             </motion.div>
           )}
 

@@ -13,7 +13,7 @@ import {
 export function GitHubInfoTooltip() {
   return (
     <motion.div 
-      className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-2"
+      className="md:flex items-center justify-center gap-2 text-sm text-muted-foreground sm: hidden"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}

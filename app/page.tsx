@@ -13,7 +13,7 @@ export default function Home() {
   const { profiles, loading, errors, reposLoading, fetchUserRepos } = useGitHubProfiles(githubUsernames);
   
   return (
-    <div className="flex flex-col space-y-8 sm:space-y-12">
+    <div className="flex flex-col space-y-3 sm:space-y-6">
       {/* Hero Section */}
       <HeroSection techBadges={techBadges} />
 
@@ -24,7 +24,7 @@ export default function Home() {
       
       {/* GitHub Profiles Grid */}
       <motion.main 
-        className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto px-4 sm:px-6"
+        className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-w-6xl mx-auto px-4 sm:px-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
