@@ -3,7 +3,12 @@ export interface GroupMember {
   role: string;
   background: string;
   linkedin: string;
-  image?: string; // Path to public/ image (e.g. "/simon.jpg")
+  image?: string; 
+}
+
+export interface Coursework {
+  name: string;
+  link: string;
 }
 
 export interface GroupInformation {
@@ -15,5 +20,5 @@ export interface GroupInformation {
   description: string;
   values: string[];
   members: GroupMember[];
-  coursework: string[];
+  coursework: Coursework[];
 }

@@ -13,7 +13,7 @@ export default function AboutPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="flex flex-col space-y-12 py-8"
+      className="flex flex-col space-y-8 sm:space-y-12 py-4 sm:py-8 px-4 sm:px-6"
     >
       {/* Hero Section */}
       <HeroSection />

@@ -9,15 +9,15 @@ export function Footer() {
   return (
     <footer className="w-full mt-auto">
       <Separator />
-      <div className="container py-6 px-4">
-        <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between w-full">
-            <div className="flex items-center gap-6 flex-wrap justify-center">
+      <div className="container py-4 sm:py-6 px-4 sm:px-6">
+        <div className="flex flex-col items-center gap-4 sm:gap-6 md:flex-row md:justify-between w-full">
+            <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
                 <Link href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity">
                 <Image 
                     src="/next.svg" 
                     alt="Next.js Logo" 
-                    width={100} 
-                    height={25} 
+                    width={80} 
+                    height={20} 
                     className="dark:filter dark:invert" 
                 />
                 </Link>
@@ -25,8 +25,8 @@ export function Footer() {
                 <Image 
                     src="/vercel.svg" 
                     alt="Vercel Logo" 
-                    width={30} 
-                    height={18} 
+                    width={24} 
+                    height={14} 
                     className="filter invert dark:invert-0" 
                 />
                 </Link>
@@ -34,8 +34,8 @@ export function Footer() {
                 <Image 
                     src="/shadcn.svg" 
                     alt="Shadcn UI Logo" 
-                    width={32} 
-                    height={19} 
+                    width={26} 
+                    height={15} 
                     className="dark:filter dark:invert" 
                 />
                 </Link>
@@ -44,17 +44,19 @@ export function Footer() {
                 <Image 
                     src="/uia.svg" 
                     alt="UiA Logo" 
-                    width={80} 
-                    height={10} 
+                    width={64} 
+                    height={8} 
                     className="filter invert dark:invert-0" 
                 />
                 </Link>
                 
             </div>  
         </div>
-        <span className="mono text-muted-foreground">
-        &copy; {new Date().getFullYear()} Simon Portillo.
-        </span>
+        <div className="text-center md:text-left mt-4">
+            <span className="mono text-muted-foreground text-sm">
+            &copy; {new Date().getFullYear()} Simon Portillo.
+            </span>
+        </div>
     </div>
     
     </footer>

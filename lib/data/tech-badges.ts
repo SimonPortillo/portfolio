@@ -1,5 +1,5 @@
 export const techBadges = [
-  { name: "React", bgColor: "bg-blue-200", textColor: "text-blue-800", hoverColor: "hover:bg-blue-300" },
+  { name: "React", bgColor: "bg-cyan-200", textColor: "text-cyan-800", hoverColor: "hover:bg-cyan-300" },
   { name: "Next.js", bgColor: "bg-gray-800", textColor: "text-white", hoverColor: "hover:bg-gray-700" },
   { name: "TypeScript", bgColor: "bg-blue-200", textColor: "text-blue-900", hoverColor: "hover:bg-blue-300" },
   { name: "Vite", bgColor: "bg-indigo-200", textColor: "text-indigo-800", hoverColor: "hover:bg-indigo-300" },
@@ -15,7 +15,7 @@ export const techBadges = [
   { name: "Scrum", bgColor: "bg-green-100", textColor: "text-green-800", hoverColor: "hover:bg-green-200" },
   { name: "Node.js", bgColor: "bg-lime-200", textColor: "text-lime-900", hoverColor: "hover:bg-lime-300" },
   { name: "PostgreSQL", bgColor: "bg-blue-200", textColor: "text-blue-800", hoverColor: "hover:bg-blue-200" },
-  { name: "PHP", bgColor: "bg-indigo-200", textColor: "text-indigo-800", hoverColor: "hover:bg-indigo-200" },
-  { name: "MySQL", bgColor: "bg-blue-200", textColor: "text-blue-800", hoverColor: "hover:bg-blue-200" },
-  { name: "Vercel", bgColor: "bg-stone-800", textColor: "text-stone-100", hoverColor: "hover:bg-stone-600" },
+  { name: "PHP", bgColor: "bg-violet-200", textColor: "text-violet-800", hoverColor: "hover:bg-violet-200" },
+  { name: "MySQL", bgColor: "bg-sky-200", textColor: "text-sky-800", hoverColor: "hover:bg-sky-200" },
+  { name: "Vercel", bgColor: "bg-stone-800", textColor: "text-stone-100", hoverColor: "hover:bg-stone-700" },
 ];
