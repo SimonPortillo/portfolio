@@ -20,7 +20,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
   return (
-    <div className="sticky top-0 w-full bg-background/50 backdrop-blur-sm z-50 border-b border-border/40">
+    <div className="fixed top-0 left-0 right-0 z-50 w-full bg-background/40 backdrop-blur-sm border-b border-border/40 p-4">
       <div className="container mx-auto px-4">
         {/* Desktop Navigation */}
         <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] items-center w-full py-2">
@@ -87,7 +87,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center justify-between py-3">
-          <div className="font-semibold text-lg">Portfolio</div>
+          <div className="font-semibold text-lg">Portefølje</div>
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <Button
