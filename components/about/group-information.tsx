@@ -9,7 +9,6 @@ interface GroupInfoProps {
   department: string;
   program: string;
   founded: string;
-  values: string[];
 }
 
 export function GroupInformation({
@@ -18,7 +17,6 @@ export function GroupInformation({
   department,
   program,
   founded,
-  values
 }: GroupInfoProps) {
   return (
     <motion.section 
