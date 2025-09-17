@@ -45,16 +45,6 @@ export function GroupInformation({
             Etablert. {founded}
           </Badge>
         </div>
-
-          <h3 className="serif text-xl sm:text-2xl lg:text-3xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Våre verdier</h3>
-        <ul className="space-y-1.5 sm:space-y-2">
-          {values.map((value, index) => (
-            <li key={index} className="flex items-start">
-              <span className="mr-2 text-primary">•</span>
-              <span className="text-sm sm:text-base">{value}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     </motion.section>
   );

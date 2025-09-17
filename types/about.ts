@@ -18,7 +18,6 @@ export interface GroupInformation {
   program: string;
   founded: string;
   description: string;
-  values: string[];
   members: GroupMember[];
   coursework: Coursework[];
 }

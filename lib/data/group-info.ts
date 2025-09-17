@@ -7,19 +7,12 @@ export const groupInfo: GroupInformation = {
   program: "IT og Informasjonssystemer",
   founded: "August 2024",
   description: "Gruppen vår består av allsidige medlemmer som utfyller hverandre godt og bygger på hverandres styrker. Vi har et sterkt vennskap og mange felles interesser, noe som bidrar til et godt samhold både faglig og sosialt. Denne kombinasjonen gjør at vi samarbeider effektivt, støtter hverandre underveis og fungerer godt som et agilt team hvor vi kan tilpasse oss endringer og utnytte styrkene til hvert enkelt medlem.",
-  values: [
-    "Samarbeid og teamarbeid",
-    "Innovasjon og kreativitet",
-    "Kvalitetskode og dokumentasjon",
-    "Kontinuerlig læring",
-    "Brukersentrert design"
-  ],
   members: [
     {
       name: "Simon Portillo",
       role: "Fullstack-utvikler",
       background: "21 år fra Porsgrunn. Jeg er interessert i teknologi, spesielt webutvikling og moderne JavaScript-rammeverk. Jeg elsker å lære nye ting og jobbe med prosjekter som utfordrer meg til å vokse som utvikler. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved Universitetet i Agder og er for øyeblikket i praksis hos Egde som Fullstack-utvikler. \n \n På fritiden driver jeg med musikk, trener og diverse småprosjekter.",
-      linkedin: "https://www.linkedin.com/in/simon-portillo-75a46628b/",
+      linkedin: "https://www.linkedin.com/in/simon-portillo/",
       image: "/simon.jpg"
     },
     {
