@@ -25,7 +25,6 @@ export default function AboutPage() {
         department={groupInfo.department}
         program={groupInfo.program}
         founded={groupInfo.founded}
-        values={groupInfo.values}
       />
       
       {/* Members Section */}
