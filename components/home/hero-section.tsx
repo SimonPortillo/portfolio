@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react"
 import { LogoLoop } from "@/components/LogoLoop"
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiSupabase, SiDocker, SiJavascript, SiDotnet, SiPython, SiPostgresql, SiMysql, SiPhp, SiCss3, SiHtml5, SiArcgis, SiFigma, SiGithubcopilot, SiVite, SiGithub, SiLeaflet, SiMapbox, SiMaplibre, SiEsri } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiSupabase, SiDocker, SiJavascript, SiDotnet, SiPython, SiPostgresql, SiMysql, SiPhp, SiCss3, SiHtml5, SiFigma, SiGithubcopilot, SiVite, SiGithub, SiLeaflet, SiMapbox, SiEsri } from 'react-icons/si';
 
 
 const techLogos = [
@@ -45,17 +45,19 @@ export function HeroSection() {
         Studentene bak prosjektene våre. Hver deltaker bidrar med unike ferdigheter og kompetanse.
         Utforsk gjerne GitHub-kortene nedenfor.
       </p>
-      <LogoLoop
-        logos={techLogos}
-        speed={55}
-        direction="left"
-        logoHeight={48}
-        gap={40}
-        pauseOnHover
-        scaleOnHover
-        fadeOut
-        ariaLabel="Technology partners"
-      />
+      <div className="hidden xl:block">
+        <LogoLoop
+          logos={techLogos}
+          speed={50}
+          direction="left"
+          logoHeight={48}
+          gap={40}
+          pauseOnHover
+          scaleOnHover
+          fadeOut
+          ariaLabel="Technology partners"
+        />
+      </div>
     </motion.section>
   )
 }
