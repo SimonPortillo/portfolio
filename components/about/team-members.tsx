@@ -53,7 +53,7 @@ export function TeamMembers({ members }: TeamMembersProps) {
                                                 animateOn="view"
                                                 sequential
                                                 revealDirection="start"
-                                                speed={40}
+                                                speed={50}
                                             />
                                         </h3>
                                         <DecryptedText
@@ -61,8 +61,8 @@ export function TeamMembers({ members }: TeamMembersProps) {
                                             parentClassName="block"
                                             className="text-xs sm:text-sm text-muted-foreground tracking-wide mb-2"
                                             encryptedClassName="text-xs sm:text-sm text-muted-foreground/50 tracking-wide mb-2"
-                                            speed={100}
-                                            maxIterations={20}
+                                            speed={50}
+                                            sequential
                                             revealDirection="start"
                                             animateOn="view"
                                         />
