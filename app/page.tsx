@@ -5,7 +5,6 @@ import { HeroSection } from "@/components/home/hero-section"
 import { GitHubInfoTooltip } from "@/components/home/github-info-tooltip"
 import { GitHubProfileCard } from "@/components/home/github-profile-card"
 import { useGitHubProfiles } from "@/lib/hooks/use-github"
-import { techBadges } from "@/lib/data/tech-badges"
 import { userRoles, secondaryRoles } from "@/lib/data/user-roles"
 import { githubUsernames } from "@/lib/data/github-usernames"
 
@@ -15,7 +14,7 @@ export default function Home() {
   return (
     <div className="flex flex-col space-y-3 sm:space-y-6">
       {/* Hero Section */}
-      <HeroSection techBadges={techBadges} />
+      <HeroSection />
 
       {/* GitHub API info with tooltip */}
       <div className="px-4 sm:px-6">

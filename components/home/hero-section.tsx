@@ -1,20 +1,36 @@
 "use client"
 
 import { motion } from "motion/react"
-import { Badge } from "@/components/ui/badge"
+import { LogoLoop } from "@/components/LogoLoop"
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiSupabase, SiDocker, SiJavascript, SiDotnet, SiPython, SiPostgresql, SiMysql, SiPhp, SiCss3, SiHtml5, SiArcgis, SiFigma, SiGithubcopilot, SiVite, SiGithub, SiLeaflet, SiMapbox, SiMaplibre, SiEsri } from 'react-icons/si';
 
-interface TechBadge {
-  name: string;
-  bgColor: string;
-  textColor: string;
-  hoverColor: string;
-}
 
-interface HeroSectionProps {
-  techBadges: TechBadge[];
-}
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiVercel />, title: "Vercel", href: "https://vercel.com" },
+  { node: <SiSupabase />, title: "Supabase", href: "https://supabase.com" },
+  { node: <SiDocker />, title: "Docker", href: "https://www.docker.com/" },
+  { node: <SiJavascript />, title: "JavaScript", href: "https://www.javascript.com/" },
+  { node: <SiDotnet />, title: ".NET", href: "https://dotnet.microsoft.com/" },
+  { node: <SiPython />, title: "Python", href: "https://www.python.org/" },
+  { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org/" },
+  { node: <SiHtml5 />, title: "HTML5", href: "https://www.w3.org/TR/html52/" },
+  { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com/" },
+  { node: <SiPhp />, title: "PHP", href: "https://www.php.net/" },
+  { node: <SiCss3 />, title: "CSS3", href: "https://www.w3.org/Style/CSS/Overview.en.html" },
+  { node: <SiFigma />, title: "Figma", href: "https://www.figma.com/" },
+  { node: <SiGithubcopilot />, title: "GitHub Copilot", href: "https://github.com/features/copilot" },
+  { node: <SiVite />, title: "Vite", href: "https://vitejs.dev/" },
+  { node: <SiGithub />, title: "GitHub", href: "https://github.com/" },
+  { node: <SiMapbox />, title: "Mapbox", href: "https://www.mapbox.com/" },
+  { node: <SiLeaflet />, title: "Leaflet", href: "https://leafletjs.com/" },
+  { node: <SiEsri />, title: "Esri", href: "https://www.esri.com/" }
+];
 
-export function HeroSection({ techBadges }: HeroSectionProps) {
+export function HeroSection() {
   return (
     <motion.section 
       className="w-full text-center py-8 sm:py-12 lg:py-16 px-4 sm:px-6"
@@ -27,43 +43,19 @@ export function HeroSection({ techBadges }: HeroSectionProps) {
       </h1>
       <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-4 sm:mb-6 px-2">
         Studentene bak prosjektene våre. Hver deltaker bidrar med unike ferdigheter og kompetanse.
-        Utforsk gjerne GitHub-kortene deres nedenfor for å se prosjektene.
+        Utforsk gjerne GitHub-kortene nedenfor.
       </p>
-      
-      <div className="flex flex-wrap gap-2 sm:gap-3 justify-center max-w-2xl mx-auto my-6 sm:my-8 px-2">
-        {techBadges.map((badge, index) => (
-          <motion.div
-            key={badge.name}
-            initial={{ rotate: 0 }}
-            whileHover={{ 
-              rotate: [-2, -4, -2, 0, 2, 4, 2, 0],
-              scale: 1.1,
-              transition: { 
-                duration: 0.6, 
-                ease: "easeInOut" 
-              } 
-            }}
-            whileTap={{ scale: 0.95 }}
-            animate={{ 
-              y: [0, -2, -4, -5, -4, -2, 0, 2, 4, 5, 4, 2, 0],
-              transition: { 
-                repeat: Infinity, 
-                repeatType: "loop",
-                duration: 3,
-                ease: "easeInOut",
-                delay: index * 0.15 % 1.5, 
-              }
-            }}
-          >
-            <Badge 
-              variant="secondary" 
-              className={`text-sm sm:text-md px-2 sm:px-4 py-1 sm:py-1.5 ${badge.bgColor} ${badge.textColor} ${badge.hoverColor} cursor-pointer transition-all`}
-            >
-              {badge.name}
-            </Badge>
-          </motion.div>
-        ))}
-      </div>
+      <LogoLoop
+        logos={techLogos}
+        speed={55}
+        direction="left"
+        logoHeight={48}
+        gap={40}
+        pauseOnHover
+        scaleOnHover
+        fadeOut
+        ariaLabel="Technology partners"
+      />
     </motion.section>
   )
 }
