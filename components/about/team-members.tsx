@@ -6,10 +6,16 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { GroupMember } from "@/types/about"
 import  {LinkedInLogoIcon} from "@radix-ui/react-icons"
 import Link from "next/link"
+import DecryptedText from '@/components/DecryptedText';
+import BlurText from "@/components/BlurText";
 
 interface TeamMembersProps {
     members: GroupMember[];
 }
+
+const handleAnimationComplete = () => {
+  console.log('Animation completed!');
+};
 
 export function TeamMembers({ members }: TeamMembersProps) {
     return (
@@ -29,6 +35,7 @@ export function TeamMembers({ members }: TeamMembersProps) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.1 * index }}
                     >
+
                         <Card className="min-h-[200px] sm:min-h-[240px] overflow-hidden p-0">
                             <CardContent className="p-0 flex flex-col sm:flex-row h-full w-full">
                                 <div className="w-full sm:w-64 flex flex-col items-center sm:items-start gap-3 sm:gap-4 bg-accent/40 px-4 sm:px-8 py-6 sm:py-10">
@@ -37,8 +44,28 @@ export function TeamMembers({ members }: TeamMembersProps) {
                                         <AvatarFallback className="text-base sm:text-lg font-semibold">{member.name.split(' ').map(n => n[0]).slice(0,2).join('')}</AvatarFallback>
                                     </Avatar>
                                     <div className="text-center sm:text-left w-full">
-                                        <h3 className="mono text-primary text-lg sm:text-2xl font-extrabold leading-tight">{member.name}</h3>
-                                        <p className="text-xs sm:text-sm text-muted-foreground tracking-wide mb-2">{member.role}</p>
+                                        <h3 className="leading-tight">
+                                            <DecryptedText
+                                                text={member.name}
+                                                parentClassName="inline-block"
+                                                className="mono text-primary text-lg sm:text-2xl font-extrabold"
+                                                encryptedClassName="mono text-primary/60 text-lg sm:text-2xl font-extrabold"
+                                                animateOn="view"
+                                                sequential
+                                                revealDirection="start"
+                                                speed={40}
+                                            />
+                                        </h3>
+                                        <DecryptedText
+                                            text={member.role}
+                                            parentClassName="block"
+                                            className="text-xs sm:text-sm text-muted-foreground tracking-wide mb-2"
+                                            encryptedClassName="text-xs sm:text-sm text-muted-foreground/50 tracking-wide mb-2"
+                                            speed={100}
+                                            maxIterations={20}
+                                            revealDirection="start"
+                                            animateOn="view"
+                                        />
                                         <div className="mt-auto pt-1 sm:pt-2">
                                             <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn profil til ${member.name}`} className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors text-xs sm:text-sm">
                                                 <LinkedInLogoIcon className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -48,7 +75,14 @@ export function TeamMembers({ members }: TeamMembersProps) {
                                     </div>
                                 </div>
                                 <div className="mono flex-1 px-4 sm:px-6 py-4 sm:py-8 text-xs sm:text-sm leading-relaxed bg-background/50 flex flex-col gap-2 sm:gap-4 border-t border-border sm:border-t-0 sm:border-l">
-                                    <p className="mt-1 sm:mt-2 whitespace-pre-line">{member.background}</p>
+                                    <BlurText
+                                        text={member.background}
+                                        className="text-xs sm:text-sm leading-relaxed"
+                                        delay={20}
+                                        animateBy="words"
+                                        direction="top"
+                                        onAnimationComplete={handleAnimationComplete}
+                                    />
                                 </div>
                             </CardContent>
                         </Card>
