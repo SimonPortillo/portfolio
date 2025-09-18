@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer"
 import { sans, serif, mono } from "@/fonts/fonts";
+import { Background } from "@/components/background";
 
 export const metadata: Metadata = {
   title: "Portfolio website",
@@ -30,7 +31,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen">
+          {/* Background Effect */}
+          <Background />
+          
+          {/* Main Content */}
+          <div className="relative z-10 flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-1 pt-16">
               {children}

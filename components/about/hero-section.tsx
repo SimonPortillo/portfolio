@@ -13,8 +13,8 @@ export function HeroSection() {
       <h1 className="serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
         Om oss
       </h1>
-      <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-4 sm:mb-6 px-2">
-        Vi er en ambisiøs gruppe som er glad i utfordring, vi ser for oss å jobbe med et bachelorprosjekt hvor vi får brukt våre ferdigheter og videreutviklet vår tekniske kompetanse. 
+      <p className="text-left leading-relaxedsm:text-lg lg:text-xl max-w-3xl mx-auto mb-4 sm:mb-6 px-2">
+        Vi er en ambisiøs gruppe som er glad i utfordring, vi ser for oss å jobbe med et prosjekt hvor vi får brukt våre ferdigheter og videreutviklet vår kompetanse. 
       </p>
     </motion.section>
   );

@@ -76,7 +76,7 @@ export default function ProjectsPage() {
               </CardContent>
               <CardFooter className="p-4 sm:p-6 pt-0">
                 <Button asChild className="w-full">
-                  <a href={project.link}>Se prosjekt detaljer</a>
+                  <a href={project.link}>Se prosjekt</a>
                 </Button>
               </CardFooter>
             </Card>

@@ -3,6 +3,7 @@
 import { motion } from "motion/react"
 import { LogoLoop } from "@/components/LogoLoop"
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiSupabase, SiDocker, SiJavascript, SiDotnet, SiPython, SiPostgresql, SiMysql, SiPhp, SiCss3, SiHtml5, SiFigma, SiGithubcopilot, SiVite, SiGithub, SiLeaflet, SiMapbox, SiEsri } from 'react-icons/si';
+import TextType from '@/components/TextType';
 
 
 const techLogos = [
@@ -37,10 +38,21 @@ export function HeroSection() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-    >
-      <h1 className="serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
-        Møt Studiegruppen Vår
-      </h1>
+    >   
+      
+        <TextType 
+          text={["Møt studiegruppen vår", "Bla ned for å lære mer"]}
+          className="serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight"
+          pauseDuration={5000}
+          deletingSpeed={50}
+          typingSpeed={90}
+          showCursor={true}
+          cursorCharacter="|"
+          as={"h1"}
+          textColors={["text-base"]}
+        />
+     
+      
       <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-4 sm:mb-6 px-2">
         Studentene bak prosjektene våre. Hver deltaker bidrar med unike ferdigheter og kompetanse.
         Utforsk gjerne GitHub-kortene nedenfor.
@@ -48,7 +60,7 @@ export function HeroSection() {
       <div className="hidden xl:block">
         <LogoLoop
           logos={techLogos}
-          speed={50}
+          speed={40}
           direction="left"
           logoHeight={48}
           gap={40}

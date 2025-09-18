@@ -6,18 +6,18 @@ export const groupInfo: GroupInformation = {
   department: "Fakultet for samfunnsvitenskap",
   program: "IT og Informasjonssystemer",
   founded: "August 2024",
-  description: "Gruppen vår består av allsidige medlemmer som utfyller hverandre godt og bygger på hverandres styrker. Vi har et sterkt vennskap og mange felles interesser, noe som bidrar til et godt samhold både faglig og sosialt. Denne kombinasjonen gjør at vi samarbeider effektivt, støtter hverandre underveis og fungerer godt som et agilt team hvor vi kan tilpasse oss endringer og utnytte styrkene til hvert enkelt medlem.",
+  description: "Gruppen vår består av allsidige medlemmer som utfyller hverandre godt og bygger på hverandres styrker. Vi har et godt vennskap og mange felles interesser, noe som bidrar til et godt samhold både faglig og sosialt. Denne kombinasjonen gjør at vi samarbeider effektivt, støtter hverandre underveis og fungerer godt som et agilt team hvor vi kan tilpasse oss endringer og utnytte styrkene til hvert enkelt medlem.",
   members: [
     {
       name: "Simon Portillo",
-      role: "Fullstack-utvikler",
-      background: "21 år fra Porsgrunn. Jeg er interessert i teknologi, spesielt webutvikling og moderne JavaScript-rammeverk. Jeg elsker å lære nye ting og jobbe med prosjekter som utfordrer meg til å vokse som utvikler. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved Universitetet i Agder og er for øyeblikket i praksis hos Egde som Fullstack-utvikler. \n \n På fritiden driver jeg med musikk, trener og diverse småprosjekter.",
+      role: "Fullstack-utvikling",
+      background: "Jeg er 21 år fra Porsgrunn. Jeg har vært interessert i teknologi, spesielt webutvikling. Jeg elsker å lære nye ting og jobbe med prosjekter som utfordrer meg til å vokse som utvikler. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved UiA og er for øyeblikket i praksis hos Egde som Fullstack-utvikler. \n \n På fritiden driver jeg med musikk, trener og diverse småprosjekter.",
       linkedin: "https://www.linkedin.com/in/simon-portillo/",
       image: "/simon.jpg"
     },
     {
       name: "Martin Goberg",
-      role: "Fullstack-utvikler",
+      role: "Fullstack-utvikling",
       background: "Jeg er 26 år og kommer fra Skien. Mine sterkeste erfaringer er innenfor webutvikling, særlig med React og Next.js, PostgreSQL og Supabase. Jeg har også sterke erfaringer innenfor diverse programmeringsspråk som C#, Java og Python. Innhar også sterke lederegenskaper fra arbeidet mitt hos Ryde Technology hvor jeg jobber som City Manager her i Kristiansand. Jeg er glad i planlegging og finner glede i en velfungerende utføringsplan som et agilt team. \n \nJeg har svennebrev som rørlegger, men bestemte meg for å utdanne meg innen det jeg brenner for, her har jeg opparbeidet meg en solid arbeidserfaring. På fritiden er jeg glad i å gå turer i skog og mark, gaming og trening.",
       linkedin: "https://www.linkedin.com/in/martin-goberg-678534248/",
       image: "/martin.jpg"
@@ -38,7 +38,7 @@ export const groupInfo: GroupInformation = {
     },
     {
       name: "Anders Fløysvik",
-      role: "Systemutvikler",
+      role: "Backend-utvikling",
       background: "Jeg er 26 år og kommer fra Bryne. Interessen min for teknologi og systemutvikling har vokst gjennom studier og egne prosjekter, hvor jeg har opparbeidet erfaring med flere moderne utviklingsteknologier. Jeg har solid kjennskap til programmeringspråk som Java, C# og Javascript, og trives godt med å utforske hvordan teknologi kan brukes til å skape praktiske og effektive løsninger. \n\n Jeg har bakgrunn som rørlegger med svennebrev, men valgte å følge lidenskapen for IT og systemutvikling. Ved siden av studiene jobber jeg som terminal arbeider, noe som har gitt meg verdifull erfaring med struktur, ansvar og samarbeid. På fritiden har jeg interesse for motorsport og gaming.",
       linkedin: "https://www.linkedin.com/in/anders-fl%C3%B8ysvik-64620a2b5/",
       image: "/anders.png"
