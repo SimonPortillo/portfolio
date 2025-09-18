@@ -14,7 +14,6 @@ export function Background() {
         edgeFade={0.3}
         autoPauseOffscreen={true}
         color="#34d399"
-        noiseAmount={0.002}
       />
     </div>
   );
