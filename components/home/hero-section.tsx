@@ -41,7 +41,7 @@ export function HeroSection() {
     >   
       
         <TextType 
-          text={["Møt studiegruppen vår", "Bla ned for å lære mer"]}
+          text={["Møt studiegruppen vår", "Vi er gruppe 13", "Bla ned for å lære mer"]}
           className="serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight"
           pauseDuration={5000}
           deletingSpeed={50}

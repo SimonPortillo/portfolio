@@ -25,7 +25,7 @@ export function TeamMembers({ members }: TeamMembersProps) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
         >
-            <h2 className="serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center">Vårt team</h2>
+            <h2 className="serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8">Vårt team</h2>
 
             <div className="grid gap-4 sm:gap-6 grid-cols-1">
                 {members.map((member, index) => (
