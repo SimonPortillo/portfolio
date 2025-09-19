@@ -31,7 +31,7 @@ export const groupInfo: GroupInformation = {
     },
     {
       name: "Amund Mikalsen",
-      role: "Team-lead / Scrum master",
+      role: "Team-lead / Scrum",
       background: "Jeg er 27 år gammel og kommer fra Mandal. På studiet har jeg utviklet en spesiell interesse for databaser, datastrukturer og algoritmer. Jeg har erfaring med Python, PostgreSQL, C# og JavaScript, og er opptatt av å utvikle løsninger som er både effektive og brukervennlige. Tidligere studerte jeg fire år ved lærerskolen med samfunnsfag, engelsk og musikk, noe som har gitt meg solide ferdigheter i formidling og samarbeid. \n\n På fritiden interesserer jeg meg for gaming og musikk, og ved siden av studiet jobber jeg innen habilitering for voksne med lettere utviklingsvariasjon – en erfaring som har styrket mine evner innen kommunikasjon, samarbeid og problemløsning.",
       linkedin: "https://www.linkedin.com/in/amund-mikalsen-0572b8290/",
       image: "/amund.jpeg"
