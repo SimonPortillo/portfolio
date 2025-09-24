@@ -14,7 +14,7 @@ interface CourseworkProps {
 export function Coursework({ courses }: CourseworkProps) {
   return (
     <motion.section
-      className="max-w-4xl mx-auto w-full py-6 sm:py-8 mb-8 sm:mb-12"
+      className="max-w-4xl mx-auto w-full py-6 sm:py-8 mb-8 sm:mb-12 overflow-x-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.6 }}

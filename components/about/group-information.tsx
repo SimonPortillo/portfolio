@@ -20,7 +20,7 @@ export function GroupInformation({
 }: GroupInfoProps) {
   return (
     <motion.section 
-      className="max-w-4xl mx-auto w-full"
+      className="max-w-4xl mx-auto w-full overflow-x-hidden"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
