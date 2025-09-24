@@ -6,7 +6,7 @@ import Image from "next/image"
 export function HeroSection() {
   return (
     <motion.section 
-      className="relative w-[100vw] h-[calc(40vh+5rem)] sm:h-[calc(55vh+5rem)] lg:h-[calc(80vh+5rem)] flex items-center justify-center overflow-hidden -mx-4 sm:ml-[calc(-50vw+50%)] sm:w-[100vw] -mt-19 "
+      className="relative h-[calc(40vh+5rem)] sm:h-[calc(55vh+5rem)] lg:h-[calc(80vh+5rem)] flex items-center justify-center overflow-hidden left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-[100vw] -mt-5 sm:-mt-19"
       style={{ maxWidth: 'none', top: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -30,7 +30,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-  <div className="relative z-10 text-left text-white/90 pt-48 sm:pt-60 px-4 sm:px-6 max-w-4xl">
+  <div className="relative z-10 text-left text-white/90 pt-48 sm:pt-60 px-4 sm:px-6 max-w-[92vw] sm:max-w-4xl">
         <motion.h1 
           className="serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
           initial={{ opacity: 0, y: 30 }}
