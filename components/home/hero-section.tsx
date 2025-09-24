@@ -67,7 +67,7 @@ export function HeroSection() {
           pauseOnHover
           scaleOnHover
           fadeOut
-          ariaLabel="Technology partners"
+          ariaLabel="Vår teknologistack"
         />
       </div>
     </motion.section>
