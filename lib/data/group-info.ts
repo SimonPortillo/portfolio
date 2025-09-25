@@ -52,10 +52,10 @@ export const groupInfo: GroupInformation = {
     }
   ],
   coursework: [
-    {name: "IS-110 Objekt Orientert Programmering", link: "https://www.uia.no/studier/emner/2024/var/is-110.html"},
-    {name: "IS-309 Videregående Databasesystemer", link: "https://www.uia.no/studier/emner/2024/var/is-309.html"},
-    {name: "IS-218 Geografiske Informasjonssystemer og AI", link: "https://www.uia.no/studier/emner/2025/var/is-218.html"},
+    {name: "IS-218 GIS og AI", link: "https://www.uia.no/studier/emner/2025/var/is-218.html"},
     {name: "IS-302 Praksisprosjekt", link: "https://www.uia.no/studier/emner/2025/host/is-302.html"},
-    {name: "IS-202 Programmeringsprosjekt", link: "https://www.uia.no/studier/emner/2024/host/is-202.html"}
+    {name: "IS-202 Programmeringsprosjekt", link: "https://www.uia.no/studier/emner/2024/host/is-202.html"},
+    {name: "IS-309 Videregående Databasesystemer", link: "https://www.uia.no/studier/emner/2024/var/is-309.html"},
+    {name: "IS-110 Objekt Orientert Programmering", link: "https://www.uia.no/studier/emner/2024/var/is-110.html"},
   ]
 };

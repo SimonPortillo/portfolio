@@ -132,6 +132,9 @@ export default function Stack({
                 unoptimized={card.img.startsWith('http')}
                 className="w-full h-full object-cover pointer-events-none select-none"
                 draggable={false}
+                placeholder='blur'
+                blurDataURL={card.img}
+               
               />
             </motion.div>
           </CardRotate>
