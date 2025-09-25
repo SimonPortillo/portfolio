@@ -247,3 +247,9 @@ p {
 .mono {
   font-family: var(--font-mono);
 }
+
+/* Background mask for text readability */
+.bg-content-mask {
+  mask: radial-gradient(ellipse at center, transparent 25%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,1) 100%);
+  -webkit-mask: radial-gradient(ellipse at center, transparent 25%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,1) 100%);
+}
