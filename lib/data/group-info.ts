@@ -11,7 +11,7 @@ export const groupInfo: GroupInformation = {
     {
       name: "Simon Portillo",
       role: "Fullstack-utvikling",
-      background: "Jeg er 21 år fra Porsgrunn. Jeg har vært interessert i teknologi, spesielt webutvikling. Jeg elsker å lære nye ting og jobbe med prosjekter som utfordrer meg til å vokse som utvikler. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved UiA og er for øyeblikket i praksis hos Egde som Fullstack-utvikler. \n \n På fritiden driver jeg med musikk, trener og diverse småprosjekter.",
+      background: "Jeg er 21 år fra Porsgrunn. Jeg er interessert i teknologi, spesielt webutvikling. Jeg liker å lære nye ting og jobbe med prosjekter som utfordrer meg og Jeg har god kjennskap til teknologier og rammeverk brukt på web. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved UiA og er for øyeblikket i praksis hos Egde som Fullstack-utvikler. \n \nPå fritiden driver jeg med musikk, trener og diverse småprosjekter.",
       linkedin: "https://www.linkedin.com/in/simon-portillo/",
       image: "/simon.jpg"
     },
@@ -25,28 +25,28 @@ export const groupInfo: GroupInformation = {
     {
       name: "Jone Manneraak",
       role: "Design / Frontend",
-      background: "Mitt navn er Jone (28), og jeg kommer fra Mandal. Jeg har alltid vært nysgjerrig på teknologi og hvordan det kombineres med kreativitet. Jeg begynte tidlig å leke med HTML og CSS, uten å helt forstå hva jeg drev med. På videregående gikk jeg Medier og Kommunikasjon på Noroff, med hovedfokus på grafisk design. Senere tok jeg en bachelorgrad i elektronisk musikk. \n\n Den siste tiden har jeg fått øynene opp for systemutvikling, særlig hvordan ting henger sammen og fungerer. Jeg vil beskrive meg selv som kreativ, reflektert og løsningsorientert. På fritiden driver jeg mye med musikkproduksjon og trening.",
+      background: "Mitt navn er Jone (28), og jeg kommer fra Mandal. Jeg har alltid vært nysgjerrig på teknologi og hvordan det kombineres med kreativitet. Jeg begynte tidlig å leke med HTML og CSS, uten å helt forstå hva jeg drev med. På videregående gikk jeg Medier og Kommunikasjon på Noroff, med hovedfokus på grafisk design. Senere tok jeg en bachelorgrad i elektronisk musikk. \n\nDen siste tiden har jeg fått øynene opp for systemutvikling, særlig hvordan ting henger sammen og fungerer. Jeg vil beskrive meg selv som kreativ, reflektert og løsningsorientert. På fritiden driver jeg mye med musikkproduksjon og trening.",
       linkedin: "https://www.linkedin.com/in/jone-manner%C3%A5k-skribeland-33863937b/",
       image: "/jone.JPG"
     },
     {
       name: "Amund Mikalsen",
       role: "Team-lead / Scrum",
-      background: "Jeg er 27 år gammel og kommer fra Mandal. På studiet har jeg utviklet en spesiell interesse for databaser, datastrukturer og algoritmer. Jeg har erfaring med Python, PostgreSQL, C# og JavaScript, og er opptatt av å utvikle løsninger som er både effektive og brukervennlige. Tidligere studerte jeg fire år ved lærerskolen med samfunnsfag, engelsk og musikk, noe som har gitt meg solide ferdigheter i formidling og samarbeid. \n\n På fritiden interesserer jeg meg for gaming og musikk, og ved siden av studiet jobber jeg innen habilitering for voksne med lettere utviklingsvariasjon – en erfaring som har styrket mine evner innen kommunikasjon, samarbeid og problemløsning.",
+      background: "Jeg er 27 år gammel og kommer fra Mandal. På studiet har jeg utviklet en spesiell interesse for databaser, datastrukturer og algoritmer. Jeg har erfaring med Python, PostgreSQL, C# og JavaScript, og er opptatt av å utvikle løsninger som er både effektive og brukervennlige. Tidligere studerte jeg fire år ved lærerskolen med samfunnsfag, engelsk og musikk, noe som har gitt meg solide ferdigheter i formidling og samarbeid. \n\nPå fritiden interesserer jeg meg for gaming og musikk, og ved siden av studiet jobber jeg innen habilitering for voksne med lettere utviklingsvariasjon – en erfaring som har styrket mine evner innen kommunikasjon, samarbeid og problemløsning.",
       linkedin: "https://www.linkedin.com/in/amund-mikalsen-0572b8290/",
       image: "/amund.jpeg"
     },
     {
       name: "Anders Fløysvik",
       role: "Backend-utvikling",
-      background: "Jeg er 26 år og kommer fra Bryne. Interessen min for teknologi og systemutvikling har vokst gjennom studier og egne prosjekter, hvor jeg har opparbeidet erfaring med flere moderne utviklingsteknologier. Jeg har solid kjennskap til programmeringspråk som Java, C# og Javascript, og trives godt med å utforske hvordan teknologi kan brukes til å skape praktiske og effektive løsninger. \n\n Jeg har bakgrunn som rørlegger med svennebrev, men valgte å følge lidenskapen for IT og systemutvikling. Ved siden av studiene jobber jeg som terminal arbeider, noe som har gitt meg verdifull erfaring med struktur, ansvar og samarbeid. På fritiden har jeg interesse for motorsport og gaming.",
+      background: "Jeg er 26 år og kommer fra Bryne. Interessen min for teknologi og systemutvikling har vokst gjennom studier og egne prosjekter, hvor jeg har opparbeidet erfaring med flere moderne utviklingsteknologier. Jeg har solid kjennskap til programmeringspråk som Java, C# og Javascript, og trives godt med å utforske hvordan teknologi kan brukes til å skape praktiske og effektive løsninger. \n\nJeg har bakgrunn som rørlegger med svennebrev, men valgte å følge lidenskapen for IT og systemutvikling. Ved siden av studiene jobber jeg som terminal arbeider, noe som har gitt meg verdifull erfaring med struktur, ansvar og samarbeid. På fritiden har jeg interesse for motorsport og gaming.",
       linkedin: "https://www.linkedin.com/in/anders-fl%C3%B8ysvik-64620a2b5/",
       image: "/anders.png"
     },
     {
       name: "Petter Kløcker Nærum",
       role: "UX / ideutvikler",
-      background: "Jeg er 23 år fra Skien, og er bosatt og studerer i Kristiansand. Jeg interesserer meg for hvordan teknologi kan videreutvikles og skape en verdi. Frontend design og ideutvikling er felt jeg trives godt med. Jeg er kreativ, nysgjerrig og opptatt av å stille spørsmål. \n\n Jeg liker å jobbe i team, og setter pris på en god diskusjon. Jeg jobber frivillig som aktivitetsleder for Kristiansand Studentidrettslag Fotball Herrer, hvor jeg har fått kompetanse innen organisering, ledelse og samarbeid.",
+      background: "Jeg er 23 år fra Skien, og er bosatt og studerer i Kristiansand. Jeg interesserer meg for hvordan teknologi kan videreutvikles og skape en verdi. Frontend design og ideutvikling er felt jeg trives godt med. Jeg er kreativ, nysgjerrig og opptatt av å stille spørsmål. \n\nJeg liker å jobbe i team, og setter pris på en god diskusjon. Jeg jobber frivillig som aktivitetsleder for Kristiansand Studentidrettslag Fotball Herrer, hvor jeg har fått kompetanse innen organisering, ledelse og samarbeid.",
       linkedin: "https://www.linkedin.com/in/petter-kl%C3%B8cker-n%C3%A6rum-92b172293/",
       image: "/petter.png"
     }

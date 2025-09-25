@@ -43,9 +43,13 @@ const BlurText: React.FC<BlurTextProps> = ({
   onAnimationComplete,
   stepDuration = 0.35
 }) => {
-  const elements = animateBy === 'words' ? text.split(' ') : text.split('');
+  // Split by line breaks first, then by words/letters within each line
+  const lines = text.split('\n');
+  const elements = lines.map(line => 
+    animateBy === 'words' ? line.split(' ') : line.split('')
+  );
   const [inView, setInView] = useState(false);
-  const ref = useRef<HTMLParagraphElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -87,36 +91,45 @@ const BlurText: React.FC<BlurTextProps> = ({
   const totalDuration = stepDuration * (stepCount - 1);
   const times = Array.from({ length: stepCount }, (_, i) => (stepCount === 1 ? 0 : i / (stepCount - 1)));
 
+  // Calculate total element count for animation completion
+  const totalElements = elements.reduce((total, line) => total + line.length, 0);
+  let elementIndex = 0;
+
   return (
-    <p ref={ref} className={`blur-text ${className} flex flex-wrap`}>
-      {elements.map((segment, index) => {
-        const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
+    <div ref={ref} className={`blur-text ${className}`}>
+      {elements.map((line, lineIndex) => (
+        <div key={lineIndex} className="flex flex-wrap">
+          {line.map((segment, segmentIndex) => {
+            const currentElementIndex = elementIndex++;
+            const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
 
-        const spanTransition: Transition = {
-          duration: totalDuration,
-          times,
-          delay: (index * delay) / 1000,
-          ease: easing
-        };
+            const spanTransition: Transition = {
+              duration: totalDuration,
+              times,
+              delay: (currentElementIndex * delay) / 1000,
+              ease: easing
+            };
 
-        return (
-          <motion.span
-            key={index}
-            initial={fromSnapshot}
-            animate={inView ? animateKeyframes : fromSnapshot}
-            transition={spanTransition}
-            onAnimationComplete={index === elements.length - 1 ? onAnimationComplete : undefined}
-            style={{
-              display: 'inline-block',
-              willChange: 'transform, filter, opacity'
-            }}
-          >
-            {segment === ' ' ? '\u00A0' : segment}
-            {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
-          </motion.span>
-        );
-      })}
-    </p>
+            return (
+              <motion.span
+                key={`${lineIndex}-${segmentIndex}`}
+                initial={fromSnapshot}
+                animate={inView ? animateKeyframes : fromSnapshot}
+                transition={spanTransition}
+                onAnimationComplete={currentElementIndex === totalElements - 1 ? onAnimationComplete : undefined}
+                style={{
+                  display: 'inline-block',
+                  willChange: 'transform, filter, opacity'
+                }}
+              >
+                {segment === '' ? '\u00A0' : segment}
+                {animateBy === 'words' && segmentIndex < line.length - 1 && '\u00A0'}
+              </motion.span>
+            );
+          })}
+        </div>
+      ))}
+    </div>
   );
 };
 
