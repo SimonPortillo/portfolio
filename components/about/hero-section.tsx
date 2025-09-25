@@ -47,9 +47,9 @@ export function HeroSection() {
           </p>
         </div>
         <Stack
-          randomRotation={true}
+          randomRotation={false}
           sendToBackOnClick={true}
-          cardDimensions={{ width: 300, height: 500 }}
+          cardDimensions={{ width: 220, height: 320 }}
           cardsData={images}
         />
         
