@@ -59,7 +59,7 @@ export function HeroSection() {
       {/* Desktop content */}
       <div className="hidden sm:block relative z-10 text-left pt-60 px-6 xl:px-0 max-w-4xl">
         <motion.h1 
-          className="serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-foreground dark:text-white/90"
+          className="serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-foreground-darker dark:text-white/90"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -67,7 +67,7 @@ export function HeroSection() {
           Om oss
         </motion.h1>
         <motion.p 
-          className="text-lg lg:text-2xl leading-relaxed pb-6 sm:pb-8 text-foreground/90 dark:text-white/80"
+          className="text-lg lg:text-2xl leading-relaxed pb-6 sm:pb-8 text-foreground-darker dark:text-white/80"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
