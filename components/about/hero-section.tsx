@@ -57,7 +57,7 @@ export function HeroSection() {
       </div>
 
       {/* Desktop content */}
-      <div className="hidden sm:block relative z-10 text-left pt-60 px-6 xl:px-0 max-w-4xl">
+      <div className="hidden sm:block relative z-10 text-left pt-80 px-6 xl:px-0 max-w-4xl">
         <motion.h1 
           className="serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-foreground-darker dark:text-white/90"
           initial={{ opacity: 0, y: 30 }}
