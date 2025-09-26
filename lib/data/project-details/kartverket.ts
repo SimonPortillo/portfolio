@@ -9,15 +9,15 @@ export const kartverketProject: ProjectDetail = {
   tags: ["C#", "ASP.NET Core ", "GIS", "MariaDB"],
   teamMembers: ["Simon Portillo", "Martin Goberg", "Jone Manneraak", "Amund Mikalsen", "Anders Fløysvik"],
   features: [
-    "Interaktivt kartgrensesnitt for presis markering av feilsted",
+    "Interaktivt kartgrensesnitt for presis markering av feil",
     "Tilpassbar skjema for ulike typer geografiske avvik",
     "Administrativt dashbord for håndtering og behandling av rapporter",
-    "Integrasjon med Kartverkets API",
+    "Integrasjon med Kartverkets kommune-API",
     "Brukerautentisering med ulike tilgangsnivåer"
   ],
   challenges: [
-    "Håndtering av kompleks geodata med varierende koordinatsystemer",
-    "Utvikling av effektive romlige spørringer for store datasett",
+    "Håndtering av ulike typer geografiske data og feil",
+    "Utvikling av effektive romlige spørringer i MariaDB",
     "Implementering av et responsivt grensesnitt for både desktop og mobil feltregistrering",
     "Sikre dataintegritet gjennom hele rapporteringsflyten"
   ],

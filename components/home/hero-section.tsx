@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react"
 import { LogoLoop } from "@/components/LogoLoop"
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiSupabase, SiDocker, SiJavascript, SiDotnet, SiPython, SiPostgresql, SiMysql, SiPhp, SiCss3, SiHtml5, SiFigma, SiGithubcopilot, SiVite, SiGithub, SiLeaflet, SiMapbox, SiEsri } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiSupabase, SiDocker, SiJavascript, SiDotnet, SiPython, SiPostgresql, SiMysql, SiPhp, SiCss3, SiHtml5, SiFigma, SiGithubcopilot, SiVite, SiGithub, SiLeaflet, SiMapbox, SiEsri, SiLaravel } from 'react-icons/si';
 import TextType from '@/components/TextType';
 
 
@@ -28,7 +28,8 @@ const techLogos = [
   { node: <SiGithub />, title: "GitHub", href: "https://github.com/" },
   { node: <SiMapbox />, title: "Mapbox", href: "https://www.mapbox.com/" },
   { node: <SiLeaflet />, title: "Leaflet", href: "https://leafletjs.com/" },
-  { node: <SiEsri />, title: "Esri", href: "https://www.esri.com/" }
+  { node: <SiEsri />, title: "Esri", href: "https://www.esri.com/" },
+  { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com/" }
 ];
 
 export function HeroSection() {
@@ -68,6 +69,7 @@ export function HeroSection() {
           scaleOnHover
           fadeOut
           ariaLabel="Vår teknologistack"
+          className="pt-8"
         />
       </div>
     </motion.section>

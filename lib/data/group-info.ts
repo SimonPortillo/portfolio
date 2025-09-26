@@ -6,12 +6,12 @@ export const groupInfo: GroupInformation = {
   department: "Fakultet for samfunnsvitenskap",
   program: "IT og Informasjonssystemer",
   founded: "August 2024",
-  description: "Gruppen vår består av allsidige medlemmer som utfyller hverandre godt og bygger på hverandres styrker. Vi har et godt vennskap og mange felles interesser, noe som bidrar til et godt samhold både faglig og sosialt. Denne kombinasjonen gjør at vi samarbeider effektivt, støtter hverandre underveis og fungerer godt som et agilt team hvor vi kan tilpasse oss endringer og utnytte styrkene til hvert enkelt medlem.",
+  description: "Gruppen vår består av allsidige medlemmer som utfyller hverandre godt og bygger på hverandres styrker. Vi har et godt vennskap og mange felles interesser, noe som bidrar til et godt samhold både faglig og sosialt. Vi støtter hverandre underveis og fungerer godt som et agilt team hvor vi kan tilpasse oss endringer og utnytte styrkene til hvert enkelt medlem. \n\nVi har gjennom studiet gjennomført flere prosjekter sammen med ulike teknologier og rammeverk som har gitt oss bred domenekunnskap og erfaring innen IT-sektoren.",
   members: [
     {
       name: "Simon Portillo",
       role: "Fullstack-utvikling",
-      background: "Jeg er 21 år fra Porsgrunn. Jeg er interessert i teknologi, spesielt webutvikling. Jeg liker å lære nye ting og jobbe med prosjekter som utfordrer meg og Jeg har god kjennskap til teknologier og rammeverk brukt på web. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved UiA og er for øyeblikket i praksis hos Egde som Fullstack-utvikler. \n \nPå fritiden driver jeg med musikk, trener og diverse småprosjekter.",
+      background: "Jeg er 21 år fra Porsgrunn. Jeg er interessert i utvikling, spesielt webutvikling. Jeg liker å lære nye ting og jobbe med prosjekter som utfordrer meg. Jeg har god kjennskap til teknologier og rammeverk brukt på web, som for eksempel React, Next.js, .NET og Laravel. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved UiA og er for øyeblikket i praksis hos Egde som Fullstack-utvikler. \n \nPå fritiden driver jeg med musikk, trener og diverse småprosjekter.",
       linkedin: "https://www.linkedin.com/in/simon-portillo/",
       image: "/simon.jpg"
     },

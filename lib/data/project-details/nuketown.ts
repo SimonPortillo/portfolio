@@ -9,9 +9,9 @@ export const nuketownProject: ProjectDetail = {
   tags: ["React", "API-integrasjon", "Geolokasjon", "Nødtjenester"],
   teamMembers: ["Simon Portillo", "Martin Goberg"],
   features: [
-    "Sanntids kartvisning av tilfluktsrom",
+    "Kartvisning av tilfluktsrom fra DSB",
     "Avstandskalkulering fra brukerens nåværende posisjon",
-    "Filtrering av tilfluktsrom etter kapasitet og fasiliteter"
+    "Beregning av rute, estimert tid og dekningsgrad for tilfluktsrom",
   ],
   challenges: [
     "Sikre nøyaktige geolokasjonsdata i nødsituasjoner",

@@ -6,7 +6,7 @@ export const teknologiradarProject: ProjectDetail = {
   githubUrl: "https://github.com/mgoberg/Teknologiradar",
   liveUrl: "https://teknologiradar.vercel.app/",
   heroImage: "/teknologiradar.png",
-  tags: ["React", "MVP", "Digin"],
+  tags: ["React", "POC", "Digin"],
   teamMembers: ["Martin Goberg","Jone Manneraak", "Petter Kløcker Nærum", "Amund Mikalsen", "Anders Fløysvik", "Simon Portillo"],
   features: [
     "Oversikt over nye og kommende teknologier",

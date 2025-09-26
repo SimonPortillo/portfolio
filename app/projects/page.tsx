@@ -26,7 +26,7 @@ export default function ProjectsPage() {
           Våre Prosjekter
         </h1>
         <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-4 sm:mb-6 px-2">
-          Utforsk prosjektene vi har jobbet med som en del av studiegruppen vår. Hvert prosjekt reflekterer vår kollektive innsats, ferdigheter og lidenskap for teknologi.
+          Utforsk prosjektene vi har jobbet med gjennom studiet. Hvert prosjekt reflekterer vår samlede innsats og ferdigheter.
         </p>
       </motion.section>
       
