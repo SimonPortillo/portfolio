@@ -5,6 +5,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer"
 import { sans, serif, mono } from "@/fonts/fonts";
 import { Background } from "@/components/background";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Portfolio website",
@@ -42,6 +43,7 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
