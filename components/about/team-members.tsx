@@ -179,8 +179,8 @@ export function TeamMembers({ members }: TeamMembersProps) {
                                     <BlurText
                                         text={member.background}
                                         className="mono text-xs sm:text-sm leading-relaxed"
-                                        delay={1}
-                                        stepDuration={0.2}
+                                        delay={3}
+                                        stepDuration={0.3}
                                         threshold={0.1}
                                         direction="bottom"
                                     />

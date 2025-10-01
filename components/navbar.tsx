@@ -58,7 +58,7 @@ export function Navbar() {
                               Oversikt over gruppeprosjekter
                             </div>
                             <p className="text-muted-foreground text-sm leading-tight">
-                              Utforsk de ulike prosjektene vi har utviklet gjennom vår akademiske reise.
+                              Utforsk de ulike prosjektene vi har utviklet gjennom vår akademiske reise. <br /> <br />
                               Hvert prosjekt demonstrerer forskjellige ferdigheter og teknologier.
                             </p>
                           </Link>

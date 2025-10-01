@@ -33,7 +33,7 @@ export function RepoDropdown({ profile, loading, onOpen }: RepoDropdownProps) {
           className="mono whitespace-nowrap w-full"
           disabled={loading}
         >
-          {loading ? "Laster..." : "Repositories"} <ChevronDown className="ml-2 h-4 w-4" />
+          {loading ? "Laster..." : "Repositories"} <ChevronDown className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="mono w-72">
