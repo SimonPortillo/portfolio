@@ -11,14 +11,14 @@ export const groupInfo: GroupInformation = {
     {
       name: "Simon Portillo",
       role: "Fullstack-utvikling",
-      background: "Jeg er 21 år fra Porsgrunn. Jeg er interessert i utvikling, spesielt webutvikling. Jeg liker å lære nye ting og jobbe med prosjekter som utfordrer meg. Jeg har god kjennskap til teknologier og rammeverk brukt på web, som for eksempel React, Next.js, .NET og Laravel. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved UiA og er for øyeblikket i praksis hos Egde som Fullstack-utvikler. \n \nPå fritiden driver jeg med musikk, trener og diverse småprosjekter.",
+      background: "Jeg er 21 år fra Porsgrunn. Jeg er interessert i utvikling, spesielt webutvikling. Jeg liker å lære nye ting og jobbe med prosjekter som utfordrer meg. Jeg har god kjennskap til teknologier og rammeverk brukt på web, som for eksempel React, Next.js, .NET og Laravel. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved UiA og er for øyeblikket i praksis hos Egde som utvikler. \n \nPå fritiden driver jeg med musikk, trener og diverse småprosjekter.",
       linkedin: "https://www.linkedin.com/in/simon-portillo/",
       image: "/simon.jpg"
     },
     {
       name: "Martin Goberg",
       role: "Fullstack-utvikling",
-      background: "Jeg er 26 år og kommer fra Skien. Mine sterkeste erfaringer er innenfor webutvikling, særlig med React og Next.js, PostgreSQL og Supabase. Jeg har også sterke erfaringer innenfor diverse programmeringsspråk som C#, Java og Python. Innhar også sterke lederegenskaper fra arbeidet mitt hos Ryde Technology hvor jeg jobber som City Manager her i Kristiansand. Jeg er glad i planlegging og finner glede i en velfungerende utføringsplan som et agilt team. \n \nJeg har svennebrev som rørlegger, men bestemte meg for å utdanne meg innen det jeg brenner for, her har jeg opparbeidet meg en solid arbeidserfaring. På fritiden er jeg glad i å gå turer i skog og mark, gaming og trening.",
+      background: "Jeg er 26 år og kommer fra Skien. Mine sterkeste erfaringer er innenfor webutvikling, særlig med React og Next.js, PostgreSQL og Supabase. Jeg har også sterke erfaringer innenfor diverse programmeringsspråk som C#, Java og Python.\n \nInnhar også sterke lederegenskaper fra arbeidet mitt hos Ryde Technology hvor jeg jobber som City Manager her i Kristiansand. Jeg er glad i planlegging og finner glede i en velfungerende utføringsplan som et agilt team. \n \nJeg har svennebrev som rørlegger, men bestemte meg for å utdanne meg innen det jeg brenner for, her har jeg opparbeidet meg en solid arbeidserfaring. På fritiden er jeg glad i å gå turer i skog og mark, gaming og trening.",
       linkedin: "https://www.linkedin.com/in/martin-goberg-678534248/",
       image: "/martin.jpg"
     },
