@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import { sans, serif, mono } from "@/fonts/fonts";
 import { Background } from "@/components/background";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Portfolio website",
@@ -44,6 +45,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <SpeedInsights />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
