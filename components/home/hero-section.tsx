@@ -40,7 +40,6 @@ export function HeroSection() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >   
-      
         <TextType 
           text={["Møt studiegruppen vår", "Vi er gruppe 13", "Bla ned for å lære mer"]}
           className="serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight"

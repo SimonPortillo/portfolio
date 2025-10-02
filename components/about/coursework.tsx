@@ -3,7 +3,6 @@
 import { motion } from "motion/react"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react";
 
 interface CourseworkProps {
   courses: {

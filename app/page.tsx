@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 import { HeroSection } from "@/components/home/hero-section"
+import { VideoSection } from "@/components/home/video-section"
 import { GitHubInfoTooltip } from "@/components/home/github-info-tooltip"
 import { GitHubProfileCard } from "@/components/home/github-profile-card"
 import { useGitHubProfiles } from "@/lib/hooks/use-github"
@@ -15,6 +16,9 @@ export default function Home() {
     <div className="flex flex-col space-y-3 sm:space-y-6">
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Video Section */}
+      <VideoSection />
 
       {/* GitHub API info with tooltip */}
       <div className="px-4 sm:px-6">
