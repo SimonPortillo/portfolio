@@ -18,6 +18,7 @@ interface TeamMembersProps {
 export function TeamMembers({ members }: TeamMembersProps) {
     const [currentMemberIndex, setCurrentMemberIndex] = useState(0);
     const [showNavigation, setShowNavigation] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(false);
     const memberRefs = useRef<(HTMLDivElement | null)[]>([]);
     const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -46,6 +47,17 @@ export function TeamMembers({ members }: TeamMembersProps) {
     useEffect(() => {
         memberRefs.current = memberRefs.current.slice(0, members.length);
     }, [members.length]);
+
+    useEffect(() => {
+        const checkDesktop = () => {
+            setIsDesktop(window.innerWidth >= 768); // md breakpoint
+        };
+
+        checkDesktop();
+        window.addEventListener('resize', checkDesktop);
+
+        return () => window.removeEventListener('resize', checkDesktop);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -176,14 +188,20 @@ export function TeamMembers({ members }: TeamMembersProps) {
                                     </div>
                                 </div>
                                 <div className=" flex-1 px-4 sm:px-6 py-4 sm:py-8 text-xs sm:text-sm leading-relaxed bg-background/50 flex flex-col gap-2 sm:gap-4 border-t border-border sm:border-t-0 sm:border-l">
-                                    <BlurText
-                                        text={member.background}
-                                        className="mono text-xs sm:text-sm leading-relaxed"
-                                        delay={3}
-                                        stepDuration={0.3}
-                                        threshold={0.1}
-                                        direction="bottom"
-                                    />
+                                    {isDesktop ? (
+                                        <BlurText
+                                            text={member.background}
+                                            className="mono text-xs sm:text-sm leading-relaxed"
+                                            delay={3}
+                                            stepDuration={0.3}
+                                            threshold={0.1}
+                                            direction="bottom"
+                                        />
+                                    ) : (
+                                        <p className="mono text-xs sm:text-sm leading-relaxed">
+                                            {member.background}
+                                        </p>
+                                    )}
                                 </div>
                             </CardContent>
                         </Card>
