@@ -65,6 +65,28 @@ export function TeamMembers({ members }: TeamMembersProps) {
                 const rect = sectionRef.current.getBoundingClientRect();
                 const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
                 setShowNavigation(isVisible);
+
+                // Track which member is currently in view
+                if (isVisible) {
+                    const viewportCenter = window.innerHeight / 2;
+                    let closestIndex = 0;
+                    let closestDistance = Infinity;
+
+                    memberRefs.current.forEach((ref, index) => {
+                        if (ref) {
+                            const memberRect = ref.getBoundingClientRect();
+                            const memberCenter = memberRect.top + memberRect.height / 2;
+                            const distance = Math.abs(memberCenter - viewportCenter);
+
+                            if (distance < closestDistance) {
+                                closestDistance = distance;
+                                closestIndex = index;
+                            }
+                        }
+                    });
+
+                    setCurrentMemberIndex(closestIndex);
+                }
             }
         };
 
@@ -133,7 +155,7 @@ export function TeamMembers({ members }: TeamMembersProps) {
                         transition={{ duration: 0.3, delay: 0.1 * index }}
                         className="transition-all duration-300 relative"
                     >
-                        {/* Camera Viewfinder Effect - Desktop Only */}
+                        {/* highlight border - Desktop Only */}
                         {currentMemberIndex === index && (
                             <div className="hidden md:block absolute -inset-4 pointer-events-none z-10">
                                 {/* Top Left Corner */}
