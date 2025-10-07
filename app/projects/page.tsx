@@ -45,9 +45,9 @@ export default function ProjectsPage() {
             transition={{ duration: 0.5, delay: 0.1 * index }}
           >
             <Card className="h-full flex flex-col">
-              <CardHeader className="p-4 sm:p-6">
+              <CardHeader className="p-3 sm:p-4 pb-2 sm:pb-3">
                 {project.imageUrl ? (
-                  <div className="w-full h-40 sm:h-48 rounded-md mb-4 overflow-hidden relative">
+                  <div className="w-full h-40 sm:h-48 rounded-md mb-2 sm:mb-3 overflow-hidden relative">
                     <Image 
                       src={project.imageUrl} 
                       alt={project.title}
@@ -58,24 +58,24 @@ export default function ProjectsPage() {
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-40 sm:h-48 bg-muted-foreground rounded-md mb-4 flex items-center justify-center text-balance">
+                  <div className="w-full h-40 sm:h-48 bg-muted-foreground rounded-md mb-2 sm:mb-3 flex items-center justify-center text-balance">
                     Ingen bilder tilgjengelig
                   </div>
                 )}
                 <h2 className="text-xl sm:text-2xl font-bold">{project.title}</h2>
               </CardHeader>
-              <CardContent className="flex-grow p-4 sm:p-6 pt-0">
-                <p className="text-muted-foreground mb-4 text-sm sm:text-base">{project.description}</p>
+              <CardContent className="flex-grow p-3 sm:p-4 pt-0">
+                <p className="text-muted-foreground mb-3 text-sm sm:text-base">{project.description}</p>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tags.map(tag => (
-                    <Badge key={tag} variant="secondary" className="text-xs">
+                    <Badge key={tag} variant="secondary" className="text-sm">
                       {tag}
                     </Badge>
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="p-4 sm:p-6 pt-0">
-                <Button asChild className="w-full">
+              <CardFooter className="p-3 sm:p-4 pt-0">
+                <Button asChild className="w-full hover:bg-primary/80 transition-colors">
                   <a href={project.link}>Se prosjekt</a>
                 </Button>
               </CardFooter>
