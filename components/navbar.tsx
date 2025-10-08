@@ -81,6 +81,11 @@ export function Navbar() {
                     <Link href="/about">Om oss</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent/50 data-[state=open]:bg-accent/50`}>
+                    <Link href="/contact">Kontakt</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
