@@ -40,11 +40,13 @@ export async function POST(request: NextRequest) {
         { status: 503 }
       )
     }
+    
+    const recipients = process.env.CONTACT_EMAIL.split(',').map(email => email.trim());
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Portfolio <noreply@gruppe13.tech>', 
-      to: [process.env.CONTACT_EMAIL],
+      to: recipients,
       subject: `Kontaktskjema: ${body.subject}`,
       replyTo: body.email,
       react: EmailTemplate({
