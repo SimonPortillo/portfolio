@@ -58,20 +58,20 @@ export function Navbar() {
                               Oversikt over gruppeprosjekter
                             </div>
                             <p className="text-muted-foreground text-sm leading-tight">
-                              Utforsk de ulike prosjektene vi har utviklet gjennom vår akademiske reise. <br /> <br />
+                              Utforsk de ulike prosjektene vi har utviklet gjennom studiet. <br /> <br />
                               Hvert prosjekt demonstrerer forskjellige ferdigheter og teknologier.
                             </p>
                           </Link>
                         </NavigationMenuLink>
                       </li>
-                      <ListItem href="/projects/project_1" title="Kartverket Reporting System">
+                      <ListItem href="/projects/project_1" title="Kartverket Rapporteringssystem">
                         En full-stack C# .NET applikasjon for rapportering av feil i kartdata.
                       </ListItem>
                       <ListItem href="/projects/project_2" title="NukeTown">
-                        En app for å finne nærmeste tilfluktsrom i en nødsituasjon.
+                        En React app for å finne nærmeste tilfluktsrom i en nødsituasjon.
                       </ListItem>
                       <ListItem href="/projects/project_3" title="Teknologiradar">
-                        En teknologiradar som konsept for Digin.
+                        En React proof of concept teknologiradar. 
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
