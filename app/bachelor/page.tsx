@@ -10,7 +10,7 @@ const memberAvatars: Record<string, string> = {
   "Jone Manneraak": "/jone.JPG",
   "Amund Mikalsen": "/amund.jpeg",
   "Anders Fløysvik": "/anders.png",
-  "Petter Kløcker-Nærum": "/petter.png",
+  "Petter Kløcker Nærum": "/petter.png",
 };
 
 export default function BachelorProjectPage() {
@@ -94,7 +94,7 @@ export default function BachelorProjectPage() {
               Gruppemedlemmer
             </h2>
             <div className="flex flex-wrap gap-1.5 sm:gap-2 mono">
-              {"Simon Portillo, Martin Goberg, Jone Manneraak, Amund Mikalsen, Anders Fløysvik, Petter Kløcker-Nærum"
+              {"Simon Portillo, Martin Goberg, Jone Manneraak, Amund Mikalsen, Anders Fløysvik, Petter Kløcker Nærum"
                 .split(", ")
                 .map((member) => (
                   <Badge
@@ -137,7 +137,7 @@ export default function BachelorProjectPage() {
               Kvalitetsaspekter
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed pb-4">
-              For å måle hviorvidt prosjektet er tilfredstillende har vi kommet
+              For å måle hvorvidt prosjektet er tilfredsstillende har vi kommet
               fram til noen kvalitetsaspekter som vi mener vil være viktige for
               å vurdere prosjektet:
             </p>
