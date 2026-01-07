@@ -1,6 +1,6 @@
-import { kartverketProject } from './kartverket';
-import { nuketownProject } from './nuketown';
-import { teknologiradarProject } from './teknologiradar';
+import { kartverketProject } from "./kartverket";
+import { nuketownProject } from "./nuketown";
+import { teknologiradarProject } from "./teknologiradar";
 
 export { kartverketProject, nuketownProject, teknologiradarProject };
 
@@ -8,5 +8,5 @@ export { kartverketProject, nuketownProject, teknologiradarProject };
 export const projectDetails = {
   project_1: kartverketProject,
   project_2: nuketownProject,
-  project_3: teknologiradarProject
+  project_3: teknologiradarProject,
 };

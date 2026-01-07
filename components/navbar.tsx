@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { motion, AnimatePresence } from "motion/react"
+import * as React from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "motion/react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList, 
+  NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
 export function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
-    <motion.div 
+    <motion.div
       className="fixed top-0 left-0 right-0 z-50 w-full bg-background/40 backdrop-blur-sm border-b border-border/40 p-4"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -40,12 +40,25 @@ export function Navbar() {
             <NavigationMenu viewport={false}>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent/50 data-[state=open]:bg-accent/50`}>
+                  <NavigationMenuLink
+                    asChild
+                    className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent/50 data-[state=open]:bg-accent/50`}
+                  >
                     <Link href="/">Hjem</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">Prosjekter</NavigationMenuTrigger>
+                  <NavigationMenuLink
+                    asChild
+                    className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent/50 data-[state=open]:bg-accent/50`}
+                  >
+                    <Link href="/bachelor">Bachelor</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    Prosjekter
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-2 w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
@@ -58,26 +71,39 @@ export function Navbar() {
                               Oversikt over gruppeprosjekter
                             </div>
                             <p className="text-muted-foreground text-sm leading-tight">
-                              Utforsk de ulike prosjektene vi har utviklet gjennom studiet. <br /> <br />
-                              Hvert prosjekt demonstrerer forskjellige ferdigheter og teknologier.
+                              Utforsk de ulike prosjektene vi har utviklet
+                              gjennom studiet. <br /> <br />
+                              Hvert prosjekt demonstrerer forskjellige
+                              ferdigheter og teknologier.
                             </p>
                           </Link>
                         </NavigationMenuLink>
                       </li>
-                      <ListItem href="/projects/project_1" title="Kartverket Rapporteringssystem">
-                        En full-stack C# .NET applikasjon for rapportering av feil i kartdata.
+                      <ListItem
+                        href="/projects/project_1"
+                        title="Kartverket Rapporteringssystem"
+                      >
+                        En full-stack C# .NET applikasjon for rapportering av
+                        feil i kartdata.
                       </ListItem>
                       <ListItem href="/projects/project_2" title="NukeTown">
-                        En React app for å finne nærmeste tilfluktsrom i en nødsituasjon.
+                        En React app for å finne nærmeste tilfluktsrom i en
+                        nødsituasjon.
                       </ListItem>
-                      <ListItem href="/projects/project_3" title="Teknologiradar">
-                        En React proof of concept teknologiradar. 
+                      <ListItem
+                        href="/projects/project_3"
+                        title="Teknologiradar"
+                      >
+                        En React proof of concept teknologiradar.
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent/50 data-[state=open]:bg-accent/50`}>
+                  <NavigationMenuLink
+                    asChild
+                    className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-accent hover:text-accent-foreground data-[active]:bg-accent/50 data-[state=open]:bg-accent/50`}
+                  >
                     <Link href="/about">Om oss</Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -106,7 +132,11 @@ export function Navbar() {
                 animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
                 transition={{ duration: 0.2, ease: "easeInOut" }}
               >
-                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                {isMobileMenuOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
               </motion.div>
             </Button>
           </div>
@@ -115,115 +145,130 @@ export function Navbar() {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div 
+            <motion.div
               className="md:hidden border-t border-border/40 py-4 overflow-hidden"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <motion.nav 
+              <motion.nav
                 className="flex flex-col space-y-3"
                 initial={{ y: -20 }}
                 animate={{ y: 0 }}
                 exit={{ y: -20 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1, duration: 0.3 }}
-              >
-                <Link 
-                  href="/" 
-                  className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1, duration: 0.3 }}
                 >
-                  Hjem
-                </Link>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.3 }}
-              >
-                <Link 
-                  href="/projects" 
-                  className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  <Link
+                    href="/"
+                    className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Hjem
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
                 >
-                  Prosjekter
-                </Link>
-              </motion.div>
-              <motion.div 
-                className="px-3 py-1"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.3 }}
-              >
-                <div className="text-sm font-medium text-muted-foreground mb-2">Spesifikke prosjekter:</div>
-                <div className="pl-4 space-y-1">
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.35, duration: 0.2 }}
+                  <Link
+                    href="/bachelor"
+                    className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Link 
-                      href="/projects/project_1" 
-                      className="block py-1 text-sm hover:text-primary transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Kartverket Rapporteringssystem
-                    </Link>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4, duration: 0.2 }}
-                  >
-                    <Link 
-                      href="/projects/project_2" 
-                      className="block py-1 text-sm hover:text-primary transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      NukeTown
-                    </Link>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.45, duration: 0.2 }}
-                  >
-                    <Link 
-                      href="/projects/project_3" 
-                      className="block py-1 text-sm hover:text-primary transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Teknologiradar
-                    </Link>
-                  </motion.div>
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.3 }}
-              >
-                <Link 
-                  href="/about" 
-                  className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                    Bachelor
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.3 }}
                 >
-                  Om oss
-                </Link>
-              </motion.div>
-            </motion.nav>
-          </motion.div>
-        )}
+                  <Link
+                    href="/projects"
+                    className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Prosjekter
+                  </Link>
+                </motion.div>
+                <motion.div
+                  className="px-3 py-1"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3, duration: 0.3 }}
+                >
+                  <div className="text-sm font-medium text-muted-foreground mb-2">
+                    Spesifikke prosjekter:
+                  </div>
+                  <div className="pl-4 space-y-1">
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.35, duration: 0.2 }}
+                    >
+                      <Link
+                        href="/projects/project_1"
+                        className="block py-1 text-sm hover:text-primary transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Kartverket Rapporteringssystem
+                      </Link>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4, duration: 0.2 }}
+                    >
+                      <Link
+                        href="/projects/project_2"
+                        className="block py-1 text-sm hover:text-primary transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        NukeTown
+                      </Link>
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.45, duration: 0.2 }}
+                    >
+                      <Link
+                        href="/projects/project_3"
+                        className="block py-1 text-sm hover:text-primary transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Teknologiradar
+                      </Link>
+                    </motion.div>
+                  </div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4, duration: 0.3 }}
+                >
+                  <Link
+                    href="/about"
+                    className="block px-3 py-2 text-base font-medium hover:bg-accent rounded-md transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Om oss
+                  </Link>
+                </motion.div>
+              </motion.nav>
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
     </motion.div>
-  )
+  );
 }
 
 function ListItem({
@@ -235,7 +280,10 @@ function ListItem({
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link href={href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+        <Link
+          href={href}
+          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+        >
           <div className="text-sm leading-none font-medium">{title}</div>
           <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
             {children}
@@ -243,5 +291,5 @@ function ListItem({
         </Link>
       </NavigationMenuLink>
     </li>
-  )
+  );
 }

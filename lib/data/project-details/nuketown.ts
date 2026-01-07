@@ -1,8 +1,9 @@
-import { ProjectDetail } from '@/types/project';
+import { ProjectDetail } from "@/types/project";
 
 export const nuketownProject: ProjectDetail = {
   title: "NukeTown",
-  description: "En app bygget i React som hjelper brukere å finne nærmeste tilfluktsrom under krisesituasjoner.",
+  description:
+    "En app bygget i React som hjelper brukere å finne nærmeste tilfluktsrom under krisesituasjoner.",
   githubUrl: "https://github.com/SimonPortillo/nuketown",
   liveUrl: "https://nuketown-one.vercel.app/",
   heroImage: "/nuketown.png",
@@ -15,11 +16,11 @@ export const nuketownProject: ProjectDetail = {
   ],
   challenges: [
     "Sikre nøyaktige geolokasjonsdata i nødsituasjoner",
-    "Sikre at data om tilfluktsrom er oppdatert og pålitelig"
+    "Sikre at data om tilfluktsrom er oppdatert og pålitelig",
   ],
   technologies: {
     frontend: ["React", "Maplibre", "Mapbox"],
     backend: ["Node.js", "Supabase", "API-er"],
-    deployment: ["Vercel"]
-  }
+    deployment: ["Vercel"],
+  },
 };

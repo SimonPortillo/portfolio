@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "motion/react"
-import Image from "next/image"
-import Stack from "@/components/Stack"
+import { motion } from "motion/react";
+import Image from "next/image";
+import Stack from "@/components/Stack";
 
 const images = [
   { id: 1, img: "/amund-portrett.JPG" },
@@ -15,9 +15,9 @@ const images = [
 
 export function HeroSection() {
   return (
-    <motion.section 
+    <motion.section
       className="relative w-full sm:w-screen flex items-center justify-center overflow-hidden -mt-5 sm:-mt-19 sm:mx-[calc(50%-50vw)] sm:min-h-[65vh] md:min-h-[75vh] lg:min-h-[88vh]"
-      style={{ maxWidth: 'none', top: 0 }}
+      style={{ maxWidth: "none", top: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -39,11 +39,14 @@ export function HeroSection() {
       </div>
 
       {/* Mobile: Stack component */}
-  <div className="sm:hidden relative z-10 w-full py-10 px-4 mx-auto max-w-[calc(100vw-2rem)] overflow-x-hidden flex flex-col items-center gap-6">
+      <div className="sm:hidden relative z-10 w-full py-10 px-4 mx-auto max-w-[calc(100vw-2rem)] overflow-x-hidden flex flex-col items-center gap-6">
         <div className="text-left max-w-[min(92vw,36rem)] text-foreground">
-          <h1 className="serif text-3xl font-bold leading-tight mb-2">Om oss</h1>
+          <h1 className="serif text-3xl font-bold leading-tight mb-2">
+            Om oss
+          </h1>
           <p className="text-base leading-relaxed text-foreground/80">
-            Vi er en ambisiøs gruppe som er glad i utfordring, vi ser for oss å jobbe med et prosjekt hvor vi får brukt våre ferdigheter og videreutviklet vår kompetanse.
+            Vi er en ambisiøs gruppe som er glad i utfordring, bla ned for å bli
+            mer kjent med hvert enkelt gruppemedlem.
           </p>
         </div>
         <Stack
@@ -53,12 +56,11 @@ export function HeroSection() {
           cardsData={images}
           sensitivity={100}
         />
-        
       </div>
 
       {/* Desktop content */}
       <div className="hidden sm:block relative z-10 text-left pt-80 px-6 xl:px-0 max-w-4xl">
-        <motion.h1 
+        <motion.h1
           className="serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-foreground-darker dark:text-white/90"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -66,13 +68,14 @@ export function HeroSection() {
         >
           Om oss
         </motion.h1>
-        <motion.p 
+        <motion.p
           className="text-lg lg:text-2xl leading-relaxed pb-6 sm:pb-8 text-foreground-darker dark:text-white/80"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Vi er en ambisiøs gruppe som er glad i utfordring, vi ser for oss å jobbe med et prosjekt hvor vi får brukt våre ferdigheter og videreutviklet vår kompetanse.
+          Vi er en ambisiøs gruppe som er glad i utfordring, bla ned for å bli
+          mer kjent med hvert enkelt gruppemedlem.
         </motion.p>
       </div>
     </motion.section>
