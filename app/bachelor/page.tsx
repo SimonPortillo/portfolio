@@ -173,17 +173,19 @@ export default function BachelorProjectPage() {
                   <span className="mr-2 text-primary">•</span>
                   <div className="flex-1">
                     <span className="font-semibold mono">
-                      MVP (Minimum Viable Product) eller PoC (Proof of Concept)
+                      Sikkerhet og personvern
                     </span>
                     <ul className="ml-4 mt-1.5 space-y-1.5">
                       <li className="flex items-start text-sm sm:text-base">
                         <span className="mr-2 text-primary">-</span>
                         <span>
-                          Et annet kvalitetsaspekt er at prosjektet i det minste
-                          kan anses som en MVP eller POC. Dette innebærer at
-                          resultatet bør kunne svare på spørsmålet slik at vi
-                          kan dra en konklusjon om påstanden &ldquo;Kan vi
-                          snakke med strukturerte data?&rdquo;.
+                          Et viktig kvalitetsaspekt er å ha et robust
+                          autentisering og autoriseringssystem for å unngå å gi
+                          språkmodellen for brede tilganger. Dette innebærer å
+                          sikre at modellen kun har tilgang til data den er
+                          autorisert til å se basert på{" "}
+                          <b>brukerens rettigheter</b>, og at sensitive data
+                          ikke blir eksponert i svarene.
                         </span>
                       </li>
                     </ul>
