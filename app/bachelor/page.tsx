@@ -2,6 +2,16 @@
 
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
+const memberAvatars: Record<string, string> = {
+  "Simon Portillo": "/simon.JPG",
+  "Martin Goberg": "/martin.JPG",
+  "Jone Manneraak": "/jone.JPG",
+  "Amund Mikalsen": "/amund.JPEG",
+  "Anders Fløysvik": "/anders.PNG",
+  "Petter Kløcker-Nærum": "/petter.PNG",
+};
 
 export default function BachelorProjectPage() {
   return (
@@ -21,7 +31,7 @@ export default function BachelorProjectPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(/placeholder.svg)`,
-            filter: "blur(8px)",
+            filter: "blur(10px)",
             transform: "scale(1.1)",
             top: "0",
           }}
@@ -65,10 +75,16 @@ export default function BachelorProjectPage() {
               Prosjekt Oversikt
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              I samarbeid med Egde Consulting skal vi utforske en case:
-              &ldquo;Hvordan kan vi snakke med strukturerte data&rdquo;. Dette
-              innebærer å utvikle en løsning som gir kontekst til en eller
-              flerespråkmodeller.
+              På vegne av <b>Egde Consulting</b> skal vi i løpet av våren
+              utvikle en <i>Proof of Concept (PoC)</i> Fullstack applikasjon som
+              demonstrerer hvordan man kan bruke store språkmodeller
+              (LLM&apos;er) til å hente informasjon fra strukturerte data.
+              <br></br> <br />
+              Hovedmålet med prosjektet er å utforske{" "}
+              <b>mulighetene og begrensningene</b> ved å bruke LLM&apos;er for å
+              samhandle med databaser, samt å vurdere{" "}
+              <b>nøyaktigheten og påliteligheten</b> til svarene generert av
+              modellen.
             </p>
           </section>
 
@@ -77,18 +93,41 @@ export default function BachelorProjectPage() {
             <h2 className="serif text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
               Gruppemedlemmer
             </h2>
-            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mono">
               {"Simon Portillo, Martin Goberg, Jone Manneraak, Amund Mikalsen, Anders Fløysvik, Petter Kløcker-Nærum"
                 .split(", ")
                 .map((member) => (
                   <Badge
                     key={member}
                     variant="secondary"
-                    className="text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2"
+                    className="text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2 flex items-center gap-2"
                   >
+                    <Avatar className="size-6 sm:size-7 lg:size-8">
+                      <AvatarImage src={memberAvatars[member]} alt={member} />
+                      <AvatarFallback>
+                        {member
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </AvatarFallback>
+                    </Avatar>
                     {member}
                   </Badge>
                 ))}
+            </div>
+          </section>
+          {/* Team Members */}
+          <section>
+            <h2 className="serif text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+              Veileder
+            </h2>
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mono">
+              <Badge
+                variant="secondary"
+                className="text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2"
+              >
+                Ingen oppgitt
+              </Badge>
             </div>
           </section>
 
@@ -97,12 +136,17 @@ export default function BachelorProjectPage() {
             <h2 className="serif text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
               Kvalitetsaspekter
             </h2>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed pb-4">
+              For å måle hviorvidt prosjektet er tilfredstillende har vi kommet
+              fram til noen kvalitetsaspekter som vi mener vil være viktige for
+              å vurdere prosjektet:
+            </p>
             <ul className="space-y-3 sm:space-y-4">
               <li className="text-base sm:text-lg text-muted-foreground">
                 <div className="flex items-start">
                   <span className="mr-2 text-primary">•</span>
                   <div className="flex-1">
-                    <span className="font-semibold">Nøyaktighet</span>
+                    <span className="font-semibold mono">Nøyaktighet</span>
                     <ul className="ml-4 mt-1.5 space-y-1.5">
                       <li className="flex items-start text-sm sm:text-base">
                         <span className="mr-2 text-primary">-</span>
@@ -128,8 +172,8 @@ export default function BachelorProjectPage() {
                 <div className="flex items-start">
                   <span className="mr-2 text-primary">•</span>
                   <div className="flex-1">
-                    <span className="font-semibold">
-                      MVP (Minimum Viable Product) eller POC (Proof of Concept)
+                    <span className="font-semibold mono">
+                      MVP (Minimum Viable Product) eller PoC (Proof of Concept)
                     </span>
                     <ul className="ml-4 mt-1.5 space-y-1.5">
                       <li className="flex items-start text-sm sm:text-base">
@@ -150,7 +194,7 @@ export default function BachelorProjectPage() {
                 <div className="flex items-start">
                   <span className="mr-2 text-primary">•</span>
                   <div className="flex-1">
-                    <span className="font-semibold">Brukervennlig</span>
+                    <span className="font-semibold mono">Brukervennlighet</span>
                     <ul className="ml-4 mt-1.5 space-y-1.5">
                       <li className="flex items-start text-sm sm:text-base">
                         <span className="mr-2 text-primary">-</span>
@@ -185,15 +229,182 @@ export default function BachelorProjectPage() {
             <h2 className="serif text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
               Plan
             </h2>
-            <ul className="space-y-1.5 sm:space-y-2">
-              <li
-                key="test"
-                className="flex items-start text-base sm:text-lg text-muted-foreground"
-              >
-                <span className="mr-2 text-primary">•</span>
-                <span>test</span>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Vi planlegger å følge en smidig utviklingsmetodikk med{" "}
+              <b>2-ukers sprinter</b>. Vi kommer til å bruke et{" "}
+              <b>Jira-board</b> for å administrere oppgaver og fremdrift. Hver
+              sprint vil inkludere planlegging, utvikling og gjennomgang. Etter
+              hver sprint vil vi ha en <b>show-and-tell</b> for å demonstrere
+              fremdriften til veileder og eventuelle andre interessenter fra
+              Egde.
+            </p>
+            <h3 className="text-lg sm:text-xl font-semibold mt-6 mb-3">
+              Mål og arbeidsoppgaver (utviklet i samerbeid med Egde)
+            </h3>
+            <ol className="space-y-3 sm:space-y-4">
+              <li className="text-base sm:text-lg text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="mr-2 text-primary font-semibold">1.</span>
+                  <div className="flex-1">
+                    <span className="font-semibold mono">
+                      Forstå eksisterende MVP
+                    </span>
+                    <ul className="ml-4 mt-1.5 space-y-1.5">
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Analysere eksisterende POC/MVP og dokumentere
+                          arkitektur og flyt.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </li>
-            </ul>
+              <li className="text-base sm:text-lg text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="mr-2 text-primary font-semibold">2.</span>
+                  <div className="flex-1">
+                    <span className="font-semibold mono">
+                      Kritisk evaluering
+                    </span>
+                    <ul className="ml-4 mt-1.5 space-y-1.5">
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Identifisere styrker, svakheter og mangler ved bruk av
+                          LLM mot strukturerte data.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li className="text-base sm:text-lg text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="mr-2 text-primary font-semibold">3.</span>
+                  <div className="flex-1">
+                    <span className="font-semibold mono">
+                      Autentisering og autorisering
+                    </span>
+                    <ul className="ml-4 mt-1.5 space-y-1.5">
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Undersøke ende-til-ende autentisering og bruk av
+                          brukertoken.
+                        </span>
+                      </li>
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Vurdere risiko for å gi AI for brede tilganger.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li className="text-base sm:text-lg text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="mr-2 text-primary font-semibold">4.</span>
+                  <div className="flex-1">
+                    <span className="font-semibold mono">
+                      Sikker datatilgang
+                    </span>
+                    <ul className="ml-4 mt-1.5 space-y-1.5">
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Utforske hvordan AI får tilgang til data etter
+                          prinsippet om minste privilegium.
+                        </span>
+                      </li>
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Vurdere RLS, views eller mellomliggende API-lag.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li className="text-base sm:text-lg text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="mr-2 text-primary font-semibold">5.</span>
+                  <div className="flex-1">
+                    <span className="font-semibold mono">RAG-forberedelse</span>
+                    <ul className="ml-4 mt-1.5 space-y-1.5">
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Forberede RAG-data som eksempelspørringer, svar og
+                          domeneforklaringer.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li className="text-base sm:text-lg text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="mr-2 text-primary font-semibold">6.</span>
+                  <div className="flex-1">
+                    <span className="font-semibold mono">
+                      Semantiske modeller
+                    </span>
+                    <ul className="ml-4 mt-1.5 space-y-1.5">
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Undersøke bruk av semantiske modeller (Fabric) for
+                          bedre datamodellforståelse.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li className="text-base sm:text-lg text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="mr-2 text-primary font-semibold">7.</span>
+                  <div className="flex-1">
+                    <span className="font-semibold mono">
+                      Agentisk tilnærming
+                    </span>
+                    <ul className="ml-4 mt-1.5 space-y-1.5">
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Vurdere agentisk arkitektur for tolkning av komplekse
+                          datamodeller.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li className="text-base sm:text-lg text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="mr-2 text-primary font-semibold">8.</span>
+                  <div className="flex-1">
+                    <span className="font-semibold mono">
+                      Sammenlikning med eksisterende løsninger
+                    </span>
+                    <ul className="ml-4 mt-1.5 space-y-1.5">
+                      <li className="flex items-start text-sm sm:text-base">
+                        <span className="mr-2 text-primary">-</span>
+                        <span>
+                          Sammenlikne egen løsning med Fabric Data Agents og
+                          tilsvarende løsninger.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ol>
           </section>
 
           {/* Ressursbruk */}
@@ -209,7 +420,7 @@ export default function BachelorProjectPage() {
               <li className="flex items-start text-base sm:text-lg text-muted-foreground">
                 <span className="mr-2 text-primary">•</span>
                 <div className="flex-1">
-                  <span className="font-semibold">Web Apps</span>
+                  <span className="font-semibold mono">Web Apps</span>
                   <ul className="ml-4 mt-1.5 space-y-1.5">
                     <li className="flex items-start text-sm sm:text-base">
                       <span className="mr-2 text-primary">-</span>
@@ -221,7 +432,7 @@ export default function BachelorProjectPage() {
               <li className="flex items-start text-base sm:text-lg text-muted-foreground">
                 <span className="mr-2 text-primary">•</span>
                 <div className="flex-1">
-                  <span className="font-semibold">Cosmos DB</span>
+                  <span className="font-semibold mono">Cosmos DB</span>
                   <ul className="ml-4 mt-1.5 space-y-1.5">
                     <li className="flex items-start text-sm sm:text-base">
                       <span className="mr-2 text-primary">-</span>
@@ -232,12 +443,12 @@ export default function BachelorProjectPage() {
               </li>
               <li className="flex items-start text-base sm:text-lg text-muted-foreground">
                 <span className="mr-2 text-primary">•</span>
-                <span className="font-semibold">Fabric?</span>
+                <span className="font-semibold mono">Fabric?</span>
               </li>
               <li className="flex items-start text-base sm:text-lg text-muted-foreground">
                 <span className="mr-2 text-primary">•</span>
                 <div className="flex-1">
-                  <span className="font-semibold">
+                  <span className="font-semibold mono">
                     Vercel AI SDK eller Microsoft ekvivalent
                   </span>
                   <ul className="ml-4 mt-1.5 space-y-1.5">
