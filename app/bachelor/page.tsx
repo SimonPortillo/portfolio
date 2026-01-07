@@ -151,7 +151,7 @@ export default function BachelorProjectPage() {
                       <li className="flex items-start text-sm sm:text-base">
                         <span className="mr-2 text-primary">-</span>
                         <span>
-                          hvor mye språkmodellen hallusinerer, Dette er svært
+                          hvor mye språkmodellen hallusinerer, dette er svært
                           viktig da man ønsker at modellen skal gi samme svar
                           til samme prompt hver gang.
                         </span>
@@ -239,7 +239,7 @@ export default function BachelorProjectPage() {
               Egde.
             </p>
             <h3 className="text-lg sm:text-xl font-semibold mt-6 mb-3">
-              Mål og arbeidsoppgaver (utviklet i samerbeid med Egde)
+              Mål og arbeidsoppgaver (utviklet i samarbeid med Egde)
             </h3>
             <ol className="space-y-3 sm:space-y-4">
               <li className="text-base sm:text-lg text-muted-foreground">
