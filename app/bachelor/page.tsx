@@ -5,12 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const memberAvatars: Record<string, string> = {
-  "Simon Portillo": "/simon.JPG",
-  "Martin Goberg": "/martin.JPG",
+  "Simon Portillo": "/simon.jpg",
+  "Martin Goberg": "/martin.jpg",
   "Jone Manneraak": "/jone.JPG",
-  "Amund Mikalsen": "/amund.JPEG",
-  "Anders Fløysvik": "/anders.PNG",
-  "Petter Kløcker-Nærum": "/petter.PNG",
+  "Amund Mikalsen": "/amund.jpeg",
+  "Anders Fløysvik": "/anders.png",
+  "Petter Kløcker-Nærum": "/petter.png",
 };
 
 export default function BachelorProjectPage() {
