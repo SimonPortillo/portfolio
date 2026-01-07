@@ -77,7 +77,7 @@ export default function BachelorProjectPage() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-center leading-tight"
           />
           <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-6 sm:mb-8 px-2">
-            <div className="text-slate-100 px-3 sm:px-4 py-1.5 sm:py-2 sm:text-lg lg:text-xl flex items-center gap-2 rounded-full backdrop-blur-md bg-white/10 border border-white/20 shadow-lg">
+            <div className="text-slate-100 text-sm px-2.5 sm:px-4 py-1.5 sm:py-2 sm:text-lg lg:text-xl flex items-center gap-1.5 sm:gap-2 rounded-full backdrop-blur-md bg-white/10 border border-white/20 shadow-lg">
               &ldquo;Hvordan kan vi{" "}
               <b>
                 <i>snakke</i>
