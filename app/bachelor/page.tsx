@@ -3,6 +3,11 @@
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import ShinyText from "@/components/ShinyText";
+import Iridescence from "@/components/Iridescence";
+import Link from "next/link";
+import { ArrowLeftIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const memberAvatars: Record<string, string> = {
   "Simon Portillo": "/simon.jpg",
@@ -21,24 +26,35 @@ export default function BachelorProjectPage() {
       exit={{ opacity: 0 }}
       className="flex flex-col"
     >
+      {/* Back Navigation */}
+      <div className="px-4 sm:px-6 md:px-8 pt-4 sm:pt-6">
+        <Link href="/">
+          <Button variant="ghost" size="sm" className="mb-4 gap-2">
+            <ArrowLeftIcon className="h-4 w-4" />
+            Tilbake til forsiden
+          </Button>
+        </Link>
+      </div>
+
       {/* Full-width Blurred Hero Section with Project Name and GitHub Link */}
       <div
         className="relative w-[100vw] h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[450px] overflow-hidden z-0 -mx-4 sm:ml-[calc(-50vw+50%)] sm:w-[100vw]"
         style={{ maxWidth: "none" }}
       >
-        {/* Background blurred image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(/placeholder.svg)`,
-            filter: "blur(10px)",
-            transform: "scale(1.1)",
-            top: "0",
-          }}
-        />
+        {/* Iridescence Background */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <div className="w-full h-full scale-150 origin-center">
+            <Iridescence
+              color={[0.7, 0.9, 1.2]}
+              mouseReact={false}
+              amplitude={0.1}
+              speed={0.2}
+            />
+          </div>
+        </div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
 
         {/* Content */}
         <motion.div
@@ -47,16 +63,27 @@ export default function BachelorProjectPage() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-center text-white leading-tight">
-            Bachelorprosjektet 2026
-          </h1>
+          <h1></h1>
+          <ShinyText
+            text="Bachelorprosjektet 2026"
+            speed={8}
+            delay={10}
+            color="#f0f8ff"
+            shineColor="#5fb0ee"
+            spread={160}
+            direction="left"
+            yoyo={true}
+            pauseOnHover={false}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-center leading-tight"
+          />
           <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-6 sm:mb-8 px-2">
-            <Badge
-              variant="default"
-              className="mono text-popover px-3 sm:px-4 py-1.5 sm:py-2 sm:text-lg lg:text-xl flex items-center gap-2"
-            >
-              &ldquo;Hvordan kan vi snakke med strukturerte data?&rdquo;
-            </Badge>
+            <div className="text-slate-100 px-3 sm:px-4 py-1.5 sm:py-2 sm:text-lg lg:text-xl flex items-center gap-2 rounded-full backdrop-blur-md bg-white/10 border border-white/20 shadow-lg">
+              &ldquo;Hvordan kan vi{" "}
+              <b>
+                <i>snakke</i>
+              </b>{" "}
+              med strukturerte data?&rdquo;
+            </div>
           </div>
         </motion.div>
       </div>
