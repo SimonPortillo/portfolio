@@ -38,7 +38,7 @@ export default function BachelorProjectPage() {
 
       {/* Full-width Blurred Hero Section with Project Name and GitHub Link */}
       <div
-        className="relative w-[100vw] h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[450px] overflow-hidden z-0 -mx-4 sm:ml-[calc(-50vw+50%)] sm:w-[100vw]"
+        className="relative w-screen h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[450px] overflow-hidden z-0 -mx-4 sm:ml-[calc(-50vw+50%)] sm:w-screen"
         style={{ maxWidth: "none" }}
       >
         {/* Iridescence Background */}
@@ -47,14 +47,19 @@ export default function BachelorProjectPage() {
             <Iridescence
               color={[0.7, 0.9, 1.2]}
               mouseReact={false}
-              amplitude={0.1}
-              speed={0.2}
+              amplitude={0.01}
+              speed={0.1}
             />
           </div>
         </div>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30" />
+        {/* Radial overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle at 50% 60%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.10) 60%, transparent 100%)",
+          }}
+        />
 
         {/* Content */}
         <motion.div
@@ -66,13 +71,13 @@ export default function BachelorProjectPage() {
           <h1></h1>
           <ShinyText
             text="Bachelorprosjektet 2026"
-            speed={8}
+            speed={5}
             delay={10}
             color="#f0f8ff"
-            shineColor="#5fb0ee"
-            spread={160}
+            shineColor="#c2e2f9"
+            spread={150}
             direction="left"
-            yoyo={true}
+            yoyo={false}
             pauseOnHover={false}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-center leading-tight"
           />
@@ -153,7 +158,7 @@ export default function BachelorProjectPage() {
                 variant="secondary"
                 className="text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2"
               >
-                Ingen oppgitt
+                ???
               </Badge>
             </div>
           </section>

@@ -78,7 +78,7 @@ export function Footer() {
                 alt="Logo"
                 width={64}
                 height={8}
-                className="grayscale brightness-500 contrast-500 invert dark:invert-0"
+                className="grayscale brightness-100 contrast-250 invert dark:invert-0"
               />
             </Link>
           </div>
