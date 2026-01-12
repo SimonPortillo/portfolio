@@ -57,7 +57,8 @@ export default function BachelorProjectPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "radial-gradient(circle at 50% 60%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.10) 60%, transparent 100%)",
+            background:
+              "radial-gradient(circle at 50% 60%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.10) 60%, transparent 100%)",
           }}
         />
 
@@ -107,10 +108,19 @@ export default function BachelorProjectPage() {
               Prosjekt Oversikt
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              På vegne av <b>Egde Consulting</b> skal vi i løpet av våren
-              utvikle en <i>Proof of Concept (PoC)</i> Fullstack applikasjon som
-              demonstrerer hvordan man kan bruke store språkmodeller
-              (LLM&apos;er) til å hente informasjon fra strukturerte data.
+              På vegne av{" "}
+              <Link
+                href="https://egde.no"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-primary hover:underline hover:text-primary-muted transition-colors"
+              >
+                Egde
+              </Link>{" "}
+              skal vi i løpet av våren utvikle en <i>Proof of Concept</i> (PoC){" "}
+              Fullstack applikasjon som demonstrerer hvordan man kan bruke store
+              språkmodeller (LLM&apos;er) til å hente informasjon fra
+              strukturerte data.
               <br></br> <br />
               Hovedmålet med prosjektet er å utforske{" "}
               <b>mulighetene og begrensningene</b> ved å bruke LLM&apos;er for å
