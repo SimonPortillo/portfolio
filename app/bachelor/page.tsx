@@ -158,18 +158,28 @@ export default function BachelorProjectPage() {
                 ))}
             </div>
           </section>
-          {/* Team Members */}
+          {/* Veileder */}
           <section>
             <h2 className="serif text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
               Veileder
             </h2>
             <div className="flex flex-wrap gap-1.5 sm:gap-2 mono">
-              <Badge
-                variant="secondary"
-                className="text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2"
+              <Link
+                href="https://www.uia.no/om-uia/ansatte/elih/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                ???
-              </Badge>
+                <Badge
+                  variant="secondary"
+                  className="text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2 flex items-center gap-2 hover:underline hover:bg-popover transition-colors"
+                >
+                  <Avatar className="size-6 sm:size-7 lg:size-8">
+                    <AvatarImage src="elih.jpg" />
+                    <AvatarFallback>EH</AvatarFallback>
+                  </Avatar>
+                  Eli Hustad
+                </Badge>
+              </Link>
             </div>
           </section>
 
