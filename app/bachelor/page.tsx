@@ -3,11 +3,10 @@
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import ShinyText from "@/components/ShinyText";
-import Iridescence from "@/components/Iridescence";
 import Link from "next/link";
 import { ArrowLeftIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ShaderHero from "@/components/bachelor/ShaderHero";
 
 const memberAvatars: Record<string, string> = {
   "Simon Portillo": "/simon.jpg",
@@ -36,63 +35,7 @@ export default function BachelorProjectPage() {
         </Link>
       </div>
 
-      {/* Full-width Blurred Hero Section with Project Name and GitHub Link */}
-      <div
-        className="relative w-screen h-[50vh] sm:h-[60vh] min-h-[400px] sm:min-h-[450px] overflow-hidden z-0 -mx-4 sm:ml-[calc(-50vw+50%)] sm:w-screen"
-        style={{ maxWidth: "none" }}
-      >
-        {/* Iridescence Background */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <div className="w-full h-full scale-150 origin-center">
-            <Iridescence
-              color={[0.7, 0.9, 1.2]}
-              mouseReact={false}
-              amplitude={0.01}
-              speed={0.1}
-            />
-          </div>
-        </div>
-
-        {/* Radial overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 60%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.10) 60%, transparent 100%)",
-          }}
-        />
-
-        {/* Content */}
-        <motion.div
-          className="relative h-full flex flex-col items-center justify-center text-primary-foreground p-4 sm:p-6 z-10"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <h1></h1>
-          <ShinyText
-            text="Bachelorprosjektet 2026"
-            speed={5}
-            delay={10}
-            color="#f0f8ff"
-            shineColor="#c2e2f9"
-            spread={150}
-            direction="left"
-            yoyo={false}
-            pauseOnHover={false}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-center leading-tight"
-          />
-          <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-6 sm:mb-8 px-2">
-            <div className="text-slate-100 text-sm px-2.5 sm:px-4 py-1.5 sm:py-2 sm:text-lg lg:text-xl flex items-center gap-1.5 sm:gap-2 rounded-full backdrop-blur-md bg-white/10 border border-white/20 shadow-lg">
-              &ldquo;Hvordan kan vi{" "}
-              <b>
-                <i>snakke</i>
-              </b>{" "}
-              med strukturerte data?&rdquo;
-            </div>
-          </div>
-        </motion.div>
-      </div>
+      <ShaderHero />
 
       {/* Info Section */}
       <div className="max-w-4xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12">
@@ -117,8 +60,17 @@ export default function BachelorProjectPage() {
               >
                 Egde
               </Link>{" "}
-              skal vi i løpet av våren utvikle en <i>Proof of Concept</i> (PoC){" "}
-              Fullstack applikasjon som demonstrerer hvordan man kan bruke store
+              skal vi i løpet av våren utvikle en
+              Fullstack applikasjon for{" "}  
+              <Link
+                href="https://miljofyrtarn.no"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-primary hover:underline hover:text-primary-muted transition-colors"
+              >
+              Miljøfyrtårn 
+              </Link>{" "}
+              som demonstrerer hvordan man kan bruke store
               språkmodeller (LLM&apos;er) til å hente informasjon fra
               strukturerte data.
               <br></br> <br />
@@ -486,24 +438,36 @@ export default function BachelorProjectPage() {
               <li className="flex items-start text-base sm:text-lg text-muted-foreground">
                 <span className="mr-2 text-primary">•</span>
                 <div className="flex-1">
-                  <span className="font-semibold mono">Cosmos DB</span>
+                  <span className="font-semibold mono">Azure Dev Ops</span>
                   <ul className="ml-4 mt-1.5 space-y-1.5">
                     <li className="flex items-start text-sm sm:text-base">
                       <span className="mr-2 text-primary">-</span>
-                      <span>Lagring av strukturerte data</span>
+                      <span>Kilde og versjonskontroll</span>
                     </li>
                   </ul>
                 </div>
               </li>
               <li className="flex items-start text-base sm:text-lg text-muted-foreground">
                 <span className="mr-2 text-primary">•</span>
-                <span className="font-semibold mono">Fabric?</span>
+                <div className="flex-1">
+                <span className="font-semibold mono">Fabric</span>
+                <ul className="ml-4 mt-1.5 space-y-1.5">
+                    <li className="flex items-start text-sm sm:text-base">
+                      <span className="mr-2 text-primary">-</span>
+                      <span><b>SQL Database</b> for strukturerte data</span>
+                    </li>
+                    <li className="flex items-start text-sm sm:text-base">
+                      <span className="mr-2 text-primary">-</span>
+                      <span>Potensielt <b>Cosmos DB</b> for ustrukturerte data</span>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li className="flex items-start text-base sm:text-lg text-muted-foreground">
                 <span className="mr-2 text-primary">•</span>
                 <div className="flex-1">
                   <span className="font-semibold mono">
-                    Vercel AI SDK eller Microsoft ekvivalent
+                    Microsoft Foundry
                   </span>
                   <ul className="ml-4 mt-1.5 space-y-1.5">
                     <li className="flex items-start text-sm sm:text-base">
