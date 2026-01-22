@@ -71,15 +71,31 @@ export function Footer() {
             </Link>
             <Link
               href="https://egde.no"
+              rel="noopener noreferrer"
+              target="_blank"
               className="opacity-70 hover:opacity-100 transition-opacity"
             >
               <Image
-                src="/placeholder.svg"
+                src="/egde.svg"
                 alt="Logo"
                 width={64}
                 height={8}
                 className="grayscale brightness-100 contrast-250 invert dark:invert-0"
               />
+            </Link>
+            <Link
+              href={"https://www.miljofyrtarn.no/"}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="opacity-70 hover:opacity-100 transition-opacity"
+            >
+             <Image
+                src="/miljofyrtarn.svg"
+                alt="Logo"
+                width={100}
+                height={8}
+                className="grayscale brightness-100 contrast-250 invert dark:invert-0"
+              /> 
             </Link>
           </div>
         </div>
