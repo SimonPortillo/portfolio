@@ -60,19 +60,17 @@ export default function BachelorProjectPage() {
               >
                 Egde
               </Link>{" "}
-              skal vi i løpet av våren utvikle en
-              Fullstack applikasjon for{" "}  
+              skal vi i løpet av våren utvikle en Fullstack applikasjon for{" "}
               <Link
                 href="https://miljofyrtarn.no"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold text-primary hover:underline hover:text-primary-muted transition-colors"
               >
-              Miljøfyrtårn 
+                Miljøfyrtårn
               </Link>{" "}
-              som demonstrerer hvordan man kan bruke store
-              språkmodeller (LLM&apos;er) til å hente informasjon fra
-              strukturerte data.
+              som demonstrerer hvordan man kan bruke store språkmodeller
+              (LLM&apos;er) til å hente informasjon fra strukturerte data.
               <br></br> <br />
               Hovedmålet med prosjektet er å utforske{" "}
               <b>mulighetene og begrensningene</b> ved å bruke LLM&apos;er for å
@@ -450,15 +448,19 @@ export default function BachelorProjectPage() {
               <li className="flex items-start text-base sm:text-lg text-muted-foreground">
                 <span className="mr-2 text-primary">•</span>
                 <div className="flex-1">
-                <span className="font-semibold mono">Fabric</span>
-                <ul className="ml-4 mt-1.5 space-y-1.5">
+                  <span className="font-semibold mono">Fabric</span>
+                  <ul className="ml-4 mt-1.5 space-y-1.5">
                     <li className="flex items-start text-sm sm:text-base">
                       <span className="mr-2 text-primary">-</span>
-                      <span><b>SQL Database</b> for strukturerte data</span>
+                      <span>
+                        <b>SQL Database</b> for strukturerte data
+                      </span>
                     </li>
                     <li className="flex items-start text-sm sm:text-base">
                       <span className="mr-2 text-primary">-</span>
-                      <span>Potensielt <b>Cosmos DB</b> for ustrukturerte data</span>
+                      <span>
+                        Potensielt <b>Cosmos DB</b> for ustrukturerte data
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -466,9 +468,7 @@ export default function BachelorProjectPage() {
               <li className="flex items-start text-base sm:text-lg text-muted-foreground">
                 <span className="mr-2 text-primary">•</span>
                 <div className="flex-1">
-                  <span className="font-semibold mono">
-                    Microsoft Foundry
-                  </span>
+                  <span className="font-semibold mono">Microsoft Foundry</span>
                   <ul className="ml-4 mt-1.5 space-y-1.5">
                     <li className="flex items-start text-sm sm:text-base">
                       <span className="mr-2 text-primary">-</span>
@@ -486,6 +486,23 @@ export default function BachelorProjectPage() {
               et budsjett for skytjenestene på Azure som vi bør holde oss
               innenfor.
             </p>
+          </section>
+          {/*Status 1*/}
+          <section>
+            <h2 className="serif text-2xl sm:text-3xl font-bold">Status 1</h2>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed pt-2 mb-2">
+              Se hvor langt vi har kommet med prosjektet så langt:
+            </p>
+            <iframe
+              className="border-2 border-primary rounded-lg"
+              width="100%"
+              height="500"
+              src="https://www.youtube.com/embed/vCVqXULZdPQ?si=zR-7FXPdI3FXSQTN"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
           </section>
         </motion.div>
       </div>
