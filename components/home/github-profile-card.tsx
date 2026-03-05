@@ -1,14 +1,22 @@
 "use client";
 
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  CardAction,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { RepoDropdown } from "@/components/home/repo-dropdown";
 import { GitHubProfile } from "@/types/github";
-import { TrendingUp } from "lucide-react";
 
 interface GitHubProfileCardProps {
   username: string;
@@ -19,28 +27,12 @@ interface GitHubProfileCardProps {
   onFetchRepos: () => void;
 }
 
-function getMostUsedLanguage(profile: GitHubProfile | null): string | null {
-  if (!profile?.repos || profile.repos.length === 0) {
-    return null;
+function getOpenForWorkLabel(profile: GitHubProfile | null): string {
+  if (!profile || profile.hireable === null) {
+    return "Status ukjent";
   }
 
-  const languageUsage = profile.repos.reduce<Record<string, number>>(
-    (accumulator, repo) => {
-      if (!repo.language) {
-        return accumulator;
-      }
-
-      accumulator[repo.language] = (accumulator[repo.language] ?? 0) + 1;
-      return accumulator;
-    },
-    {},
-  );
-
-  const sortedLanguages = Object.entries(languageUsage).sort(
-    (a, b) => b[1] - a[1],
-  );
-
-  return sortedLanguages.length > 0 ? sortedLanguages[0][0] : null;
+  return profile.hireable ? "Åpen for arbeid" : "Ikke åpen for arbeid";
 }
 
 export function GitHubProfileCard({
@@ -52,7 +44,8 @@ export function GitHubProfileCard({
   onFetchRepos,
 }: GitHubProfileCardProps) {
   const company = profile?.company?.trim() || "Ingen bedrift";
-  const mostUsedLanguage = getMostUsedLanguage(profile) || "Ingen språkdata";
+  const openForWork = getOpenForWorkLabel(profile);
+  const githubProfileUrl = profile?.html_url ?? "#";
 
   return (
     <Card className="flex flex-col min-h-[400px] w-full">
@@ -120,13 +113,13 @@ export function GitHubProfileCard({
               <Skeleton className="h-5 w-full mt-1" />
               <Skeleton className="h-5 w-5/6 mt-1" />
 
-              <div className="flex flex-col mt-auto pt-4 space-y-3">
+              <CardFooter className="mt-auto flex-col items-start gap-3 px-0 pt-4">
                 <div className="flex gap-4">
                   <Skeleton className="h-5 w-32" />
                   <Skeleton className="h-5 w-32" />
                 </div>
                 <Skeleton className="h-9 w-full mt-2" />
-              </div>
+              </CardFooter>
             </motion.div>
           ) : error ? (
             <motion.p
@@ -146,23 +139,20 @@ export function GitHubProfileCard({
               transition={{ duration: 0.4, delay: 0.1 }}
               className="flex flex-col h-full"
             >
-              <h1 className="text-4xl font-bold">
+              <CardTitle className="text-4xl">
                 {profile?.name || "No name found"}
-              </h1>
-              <p className="text-sm text-muted-foreground">@{profile?.login}</p>
+              </CardTitle>
+              <CardDescription>@{profile?.login}</CardDescription>
 
               <div className="mono flex flex-wrap gap-2 my-2">
-                <Badge variant="default">{company}</Badge>
-                <Badge variant="outline">
-                  {mostUsedLanguage}
-                  <TrendingUp />
-                </Badge>
+                <Badge variant="outline">{company}</Badge>
+                <Badge variant="secondary">{openForWork}</Badge>
               </div>
 
               <p className="text-foreground mt-2 h-[72px] overflow-hidden">
                 {profile?.bio || "Ingen bio tilgjengelig"}
               </p>
-              <div className="flex flex-col mt-auto pt-4 space-y-3">
+              <CardFooter className="mt-auto flex-col items-start gap-3 px-0 pt-4">
                 <div className="flex justify-left gap-6">
                   <p className="mono text-sm font-extrabold text-muted-foreground">
                     {profile?.public_repos} repositories
@@ -172,27 +162,31 @@ export function GitHubProfileCard({
                   </p>
                 </div>
 
-                <div className="flex gap-3 w-full justify-left">
-                  <a
-                    href={profile?.html_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 max-w-[140px]"
+                <CardAction className="mt-1 flex w-full flex-col items-stretch justify-start gap-3 self-auto justify-self-auto px-0 sm:flex-row sm:items-center">
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="mono w-full sm:max-w-[140px]"
+                    asChild
                   >
-                    <Button variant="outline" size="sm" className="mono w-full">
+                    <Link
+                      href={githubProfileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Vis på GitHub
-                    </Button>
-                  </a>
+                    </Link>
+                  </Button>
 
-                  <div className="flex-1 max-w-[140px]">
-                    <RepoDropdown
+                  <div className="w-full sm:flex-1 sm:max-w-[140px]">
+                    <RepoDropdown 
                       profile={profile}
                       loading={repoLoading}
                       onOpen={onFetchRepos}
                     />
                   </div>
-                </div>
-              </div>
+                </CardAction>
+              </CardFooter>
             </motion.div>
           )}
         </AnimatePresence>
