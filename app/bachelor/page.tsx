@@ -487,23 +487,6 @@ export default function BachelorProjectPage() {
               innenfor.
             </p>
           </section>
-          {/*Status 1*/}
-          <section>
-            <h2 className="serif text-2xl sm:text-3xl font-bold">Status 1</h2>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed pt-2 mb-2">
-              Se hvor langt vi har kommet med prosjektet så langt:
-            </p>
-            <iframe
-              className="border-2 border-primary rounded-lg"
-              width="100%"
-              height="500"
-              src="https://www.youtube.com/embed/vCVqXULZdPQ?si=zR-7FXPdI3FXSQTN"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </section>
         </motion.div>
       </div>
     </motion.div>
