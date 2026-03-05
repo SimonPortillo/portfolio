@@ -11,7 +11,7 @@ export const groupInfo: GroupInformation = {
     {
       name: "Simon Portillo",
       role: "Fullstack-utvikling",
-      background: "Jeg er 21 år fra Porsgrunn. Jeg er interessert i utvikling, spesielt webutvikling. Jeg liker å lære nye ting og jobbe med prosjekter som utfordrer meg. Jeg har god kjennskap til teknologier og rammeverk brukt på web, som for eksempel React, Next.js, .NET og Laravel. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved UiA og er for øyeblikket i praksis hos Egde som utvikler. \n \nPå fritiden driver jeg med musikk, trener og diverse småprosjekter.",
+      background: "Jeg er 22 år fra Porsgrunn. Jeg er interessert i utvikling, spesielt webutvikling. Jeg liker å lære nye ting og jobbe med prosjekter som utfordrer meg. Jeg har god kjennskap til teknologier og rammeverk brukt på web, som for eksempel React, Next.js, .NET og Laravel. \n \nJeg har erfaring som Læringsassistent i Objekt-orientert programmering ved UiA og er for øyeblikket i praksis hos Egde som utvikler. \n \nPå fritiden driver jeg med musikk, trener og diverse småprosjekter.",
       linkedin: "https://www.linkedin.com/in/simon-portillo/",
       image: "/simon.jpg"
     },

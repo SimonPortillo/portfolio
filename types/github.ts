@@ -11,6 +11,7 @@ export interface GitHubProfile {
   login: string;
   avatar_url: string;
   name: string;
+  company: string | null;
   bio: string;
   html_url: string;
   public_repos: number;

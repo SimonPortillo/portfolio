@@ -1,47 +1,70 @@
-import { useState, useEffect } from 'react';
-import { GitHubProfile } from '@/types';  // Import from the root types directory
-import { fetchGitHubProfile, fetchGitHubRepos } from '@/lib/services/github-service';  // Updated path to use alias and correct location
+import { useState, useEffect } from "react";
+import { GitHubProfile } from "@/types"; // Import from the root types directory
+import {
+  fetchGitHubProfile,
+  fetchGitHubRepos,
+} from "@/lib/services/github-service"; // Updated path to use alias and correct location
 
 export function useGitHubProfiles(usernames: string[]) {
-  const [profiles, setProfiles] = useState<(GitHubProfile | null)[]>(Array(usernames.length).fill(null));
-  const [loading, setLoading] = useState<boolean[]>(Array(usernames.length).fill(true));
-  const [errors, setErrors] = useState<(string | null)[]>(Array(usernames.length).fill(null));
-  const [reposLoading, setReposLoading] = useState<boolean[]>(Array(usernames.length).fill(false));
+  const [profiles, setProfiles] = useState<(GitHubProfile | null)[]>(
+    Array(usernames.length).fill(null),
+  );
+  const [loading, setLoading] = useState<boolean[]>(
+    Array(usernames.length).fill(true),
+  );
+  const [errors, setErrors] = useState<(string | null)[]>(
+    Array(usernames.length).fill(null),
+  );
+  const [reposLoading, setReposLoading] = useState<boolean[]>(
+    Array(usernames.length).fill(false),
+  );
 
   useEffect(() => {
     const fetchProfiles = async () => {
       const profilePromises = usernames.map(async (username, index) => {
         try {
-          const data = await fetchGitHubProfile(username);
-          
-          setProfiles(prev => {
+          const [profileResult, reposResult] = await Promise.allSettled([
+            fetchGitHubProfile(username),
+            fetchGitHubRepos(username),
+          ]);
+
+          if (profileResult.status !== "fulfilled") {
+            throw profileResult.reason;
+          }
+
+          const data: GitHubProfile = {
+            ...profileResult.value,
+            repos: reposResult.status === "fulfilled" ? reposResult.value : [],
+          };
+
+          setProfiles((prev) => {
             const updated = [...prev];
             updated[index] = data;
             return updated;
           });
-          
-          setLoading(prev => {
+
+          setLoading((prev) => {
             const updated = [...prev];
             updated[index] = false;
             return updated;
           });
         } catch (err) {
           console.error(`Failed to fetch GitHub profile for ${username}:`, err);
-          
-          setErrors(prev => {
+
+          setErrors((prev) => {
             const updated = [...prev];
-            updated[index] = 'Failed to load GitHub profile';
+            updated[index] = "Failed to load GitHub profile";
             return updated;
           });
-          
-          setLoading(prev => {
+
+          setLoading((prev) => {
             const updated = [...prev];
             updated[index] = false;
             return updated;
           });
         }
       });
-      
+
       await Promise.all(profilePromises);
     };
 
@@ -49,7 +72,7 @@ export function useGitHubProfiles(usernames: string[]) {
   }, [usernames]);
 
   const fetchUserRepos = async (username: string, index: number) => {
-    setReposLoading(prev => {
+    setReposLoading((prev) => {
       const updated = [...prev];
       updated[index] = true;
       return updated;
@@ -57,13 +80,13 @@ export function useGitHubProfiles(usernames: string[]) {
 
     try {
       const repos = await fetchGitHubRepos(username);
-      
-      setProfiles(prev => {
+
+      setProfiles((prev) => {
         const updated = [...prev];
         if (updated[index]) {
           updated[index] = {
             ...updated[index]!,
-            repos
+            repos,
           };
         }
         return updated;
@@ -71,7 +94,7 @@ export function useGitHubProfiles(usernames: string[]) {
     } catch (err) {
       console.error(`Failed to fetch repositories for ${username}:`, err);
     } finally {
-      setReposLoading(prev => {
+      setReposLoading((prev) => {
         const updated = [...prev];
         updated[index] = false;
         return updated;
@@ -84,6 +107,6 @@ export function useGitHubProfiles(usernames: string[]) {
     loading,
     errors,
     reposLoading,
-    fetchUserRepos
+    fetchUserRepos,
   };
 }
