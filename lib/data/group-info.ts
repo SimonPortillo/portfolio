@@ -18,7 +18,7 @@ export const groupInfo: GroupInformation = {
     {
       name: "Martin Goberg",
       role: "Fullstack-utvikling",
-      background: "Jeg er 26 år og kommer fra Skien. Mine sterkeste erfaringer er innenfor webutvikling, særlig med React og Next.js, PostgreSQL og Supabase. Jeg har også sterke erfaringer innenfor diverse programmeringsspråk som C#, Java og Python.\n \nInnhar også sterke lederegenskaper fra arbeidet mitt hos Ryde Technology hvor jeg jobber som City Manager her i Kristiansand. Jeg er glad i planlegging og finner glede i en velfungerende utføringsplan som et agilt team. \n \nJeg har svennebrev som rørlegger, men bestemte meg for å utdanne meg innen det jeg brenner for, her har jeg opparbeidet meg en solid arbeidserfaring. På fritiden er jeg glad i å gå turer i skog og mark, gaming og trening.",
+      background: "Jeg er 26 år og kommer fra Skien. Mine sterkeste erfaringer er innenfor webutvikling, særlig med React og Next.js, PostgreSQL og Supabase. Jeg har også sterke erfaringer innenfor diverse programmeringsspråk som C#, Java og Python.\n \nJobber som integrasjonsutvikler hos Nettbureau i Skien. Jeg er glad i planlegging og finner glede i en velfungerende utføringsplan som et agilt team. \n \nJeg har svennebrev som rørlegger, men bestemte meg for å utdanne meg innen det jeg brenner for, her har jeg opparbeidet meg en solid arbeidserfaring. På fritiden er jeg glad i å gå turer i skog og mark, gaming og trening.",
       linkedin: "https://www.linkedin.com/in/martin-goberg-678534248/",
       image: "/martin.jpg"
     },
